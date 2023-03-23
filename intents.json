@@ -1,0 +1,52 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["hello", "hi", "hey", "what's up", "good morning", "good evening"],
+        "responses": ["Hello! How can I help you today?", "Hi there! What can I do for you?", "Hey! Need assistance with reminders or events?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["bye", "goodbye", "see you later", "take care", "farewell"],
+        "responses": ["Goodbye! Have a great day!", "See you later! Don't hesitate to ask if you need help.", "Farewell! If you need me, I'll be here."]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["thank you", "thanks", "appreciate it", "that's helpful"],
+        "responses": ["You're welcome! If you need more help, just ask.", "No problem! Let me know if you need anything else.", "Happy to help!"]
+      },
+      {
+        "tag": "name",
+        "patterns": ["what's your name", "who are you", "tell me your name"],
+        "responses": ["I'm your ReminderBot! I'm here to help you with reminders and events."]
+      },
+      {
+        "tag": "about",
+        "patterns": ["tell me about yourself", "what do you do", "what's your purpose"],
+        "responses": ["I'm ReminderBot, an AI chatbot designed to help you create, manage, and delete reminders and events."]
+      },
+      {
+        "tag": "help",
+        "patterns": ["help", "how do you work", "what can you do"],
+        "responses": ["I can help you create, manage, and delete reminders and events. Just tell me what you need, and I'll assist you."]
+      },
+      {
+        "tag": "complaint",
+        "patterns": ["something is wrong", "it's not working", "there's an issue"],
+        "responses": ["I'm sorry to hear that! Please provide more details so I can help you better.", "What seems to be the problem? I'll do my best to assist you."]
+      },
+      {
+        "tag": "set_reminder",
+        "patterns": ["set a reminder", "create a reminder", "remind me to", "add a reminder"],
+        "responses": ["Sure, what do you want to be reminded about, and when?", "Okay, please provide the details for the reminder."]
+      },
+      {
+        "tag": "delete_reminder",
+        "patterns": ["delete reminder", "remove reminder", "cancel reminder"],
+        "responses": ["Which reminder would you like to delete?", "Please provide the details of the reminder you want to remove."]
+      },
+      {
+        "tag": "list_reminders",
+        "patterns": ["list reminders", "show reminders", "what are my reminders"],
+        "responses": ["Here are your current reminders:",
+  
