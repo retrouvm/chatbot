@@ -48,5 +48,7 @@
       {
         "tag": "list_reminders",
         "patterns": ["list reminders", "show reminders", "what are my reminders"],
-        "responses": ["Here are your current reminders:",
-  
+        "responses": ["Here are your current reminders:",]
+      }
+    ]
+}
