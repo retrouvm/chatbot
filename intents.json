@@ -36,19 +36,88 @@
         "responses": ["I'm sorry to hear that! Please provide more details so I can help you better.", "What seems to be the problem? I'll do my best to assist you."]
       },
       {
-        "tag": "set_reminder",
-        "patterns": ["set a reminder", "create a reminder", "remind me to", "add a reminder"],
-        "responses": ["Sure, what do you want to be reminded about, and when?", "Okay, please provide the details for the reminder."]
+        "tag": "setting_reminder",
+        "patterns": [
+          "Set a reminder",
+          "Create a reminder",
+          "Remind me to"
+        ],
+        "responses": [
+          "Sure, what's the date and time of the reminder?",
+          "Of course, please provide me with the details, date, and time for the reminder."
+        ]
       },
       {
-        "tag": "delete_reminder",
-        "patterns": ["delete reminder", "remove reminder", "cancel reminder"],
-        "responses": ["Which reminder would you like to delete?", "Please provide the details of the reminder you want to remove."]
+        "tag": "deleting_reminder",
+        "patterns": [
+          "Delete a reminder",
+          "Remove a reminder",
+          "Cancel a reminder"
+        ],
+        "responses": [
+          "Which reminder would you like to delete? Please provide me with the details.",
+          "Sure, tell me more about the reminder you want to remove, and I'll delete it for you."
+        ]
       },
       {
-        "tag": "list_reminders",
-        "patterns": ["list reminders", "show reminders", "what are my reminders"],
-        "responses": ["Here are your current reminders:"]
+        "tag": "listing_reminders",
+        "patterns": [
+          "List reminders",
+          "Show me my reminders",
+          "What are my reminders?"
+        ],
+        "responses": [
+          "Here are your reminders:",
+          "These are your current reminders:"
+        ]
+      },
+      {
+        "tag": "updating_reminder",
+        "patterns": [
+          "Update a reminder",
+          "Change a reminder",
+          "Edit a reminder"
+        ],
+        "responses": [
+          "Which reminder would you like to update? Please provide me with the details.",
+          "Sure, tell me more about the reminder you want to update, and I'll help you make the necessary changes."
+        ]
+      },
+      {
+        "tag": "saving_event",
+        "patterns": [
+          "Save an event",
+          "Create an event",
+          "Add an event"
+        ],
+        "responses": [
+          "Sure, what's the date, time, and details of the event?",
+          "Of course, please provide me with the details, date, and time for the event."
+        ]
+      },
+      {
+        "tag": "deleting_event",
+        "patterns": [
+          "Delete an event",
+          "Remove an event",
+          "Cancel an event"
+        ],
+        "responses": [
+          "Which event would you like to delete? Please provide me with the details.",
+          "Sure, tell me more about the event you want to remove, and I'll delete it for you."
+        ]
+      },
+      {
+        "tag": "listing_events",
+        "patterns": [
+          "List events",
+          "Show me my events",
+          "What are my events?"
+        ],
+        "responses": [
+          "Here are your events:",
+          "These are your current events:"
+        ]
       }
     ]
 }
