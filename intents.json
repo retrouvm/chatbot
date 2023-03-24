@@ -40,25 +40,68 @@
         "patterns": [
           "Set a reminder",
           "Create a reminder",
-          "Remind me to"
+          "Remind me to",
+          {
+            "text": "Set a reminder to {reminder_text} on {date} at {time}",
+            "entities": ["reminder_text", "date", "time"]
+          },
+          {
+            "text": "Remind me to {reminder_text} tomorrow at {time}",
+            "entities": ["reminder_text", "time"]
+          },
+          {
+            "text": "Create a reminder for {date} to {reminder_text}",
+            "entities": ["date", "reminder_text"]
+          }
         ],
         "responses": [
           "Sure, what's the date and time of the reminder?",
-          "Of course, please provide me with the details, date, and time for the reminder."
+          "Of course, please provide me with the details, date, and time for the reminder.",
+          {
+            "text": "Creating a reminder for {date} to {reminder_text}",
+            "entities": ["date", "reminder_text"]
+          }
         ]
       },
       {
         "tag": "deleting_reminder",
         "patterns": [
-          "Delete a reminder",
-          "Remove a reminder",
-          "Cancel a reminder"
+          {"text": "Delete a reminder", "entities": []},
+          {"text": "Remove a reminder", "entities": []},
+          {"text": "Cancel a reminder", "entities": []},
+          {"text": "Delete the reminder for {reminder_text} on {date} at {time}","entities": ["reminder_text", "date", "time"]},
+          {"text": "Remove the reminder to {reminder_text} tomorrow at {time}",
+            "entities": ["reminder_text", "time"]
+          },
+          {
+            "text": "Cancel the {date} reminder about {reminder_text}",
+            "entities": ["date", "reminder_text"]
+          },
+          {
+            "text": "Delete the reminder with ID {reminder_id}",
+            "entities": ["reminder_id"]
+          }
         ],
         "responses": [
-          "Which reminder would you like to delete? Please provide me with the details.",
-          "Sure, tell me more about the reminder you want to remove, and I'll delete it for you."
+          {
+            "text": "Which reminder would you like to delete? Please provide me with the details.",
+            "entities": []
+          },
+          {
+            "text": "Sure, tell me more about the reminder you want to remove, and I'll delete it for you.",
+            "entities": []
+          },
+          {
+            "text": "Deleting the reminder with ID {reminder_id}",
+            "entities": ["reminder_id"]
+          },
+          {
+            "text": "Canceling the {date} reminder about {reminder_text}",
+            "entities": ["date", "reminder_text"]
+          }
         ]
       },
+      
       {
         "tag": "listing_reminders",
         "patterns": [
