@@ -69,21 +69,11 @@
           {"text": "Delete a reminder", "entities": []},
           {"text": "Remove a reminder", "entities": []},
           {"text": "Cancel a reminder", "entities": []},
-          {"text": "Delete the reminder for {reminder_text} on {date} at {time}","entities": ["reminder_text", "date", "time"]},
-          {"text": "Remove the reminder to {reminder_text} tomorrow at {time}",
-            "entities": ["reminder_text", "time"]
-          },
-          {
-            "text": "Cancel the {date} reminder about {reminder_text}",
-            "entities": ["date", "reminder_text"]
-          },
-          {
-            "text": "Delete the reminder with ID {reminder_id}",
-            "entities": ["reminder_id"]
-          }
-        ],
-        "responses": [
-          {
+          {"text": "Delete the reminder for {reminder_text} on {date} at {time}", "entities": ["reminder_text", "date", "time"]},
+          {"text": "Remove the reminder to {reminder_text} tomorrow at {time}", "entities": ["reminder_text", "time"]},
+          {"text": "Cancel the {date} reminder about {reminder_text}", "entities": ["date", "reminder_text"]},
+          {"text": "Delete the reminder with ID {reminder_id}", "entities": ["reminder_id"]}],
+        "responses": [{
             "text": "Which reminder would you like to delete? Please provide me with the details.",
             "entities": []
           },
