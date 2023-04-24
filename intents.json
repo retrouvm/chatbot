@@ -2,154 +2,214 @@
     "intents": [
       {
         "tag": "greeting",
-        "patterns": ["hello", "hi", "hey", "what's up", "good morning", "good evening"],
-        "responses": ["Hello! How can I help you today?", "Hi there! What can I do for you?", "Hey! Need assistance with reminders or events?"]
+        "patterns":
+        [
+          {"text": "hello", "entities": []},
+          {"text": "hi", "entities": []},
+          {"text": "hey", "entities": []}, 
+          {"text": "what's up", "entities": []}, 
+          {"text": "good morning", "entities": []}, 
+          {"text": "good evening", "entities": []}
+        ],
+        "responses": 
+        [
+          {"text": "Hello! How can I help you today?", "entities": []}, 
+          {"text": "Hi there! What can I do for you?", "entities": []}, 
+          {"text": "Hey! Need assistance with reminders or events?", "entities": []}
+        ]
       },
       {
         "tag": "goodbye",
-        "patterns": ["bye", "goodbye", "see you later", "take care", "farewell"],
-        "responses": ["Goodbye! Have a great day!", "See you later! Don't hesitate to ask if you need help.", "Farewell! If you need me, I'll be here."]
+        "patterns": 
+        [
+          {"text": "bye", "entities": []}, 
+          {"text": "goodbye", "entities": []}, 
+          {"text": "see you later", "entities": []}, 
+          {"text": "take care", "entities": []}, 
+          {"text": "farewell", "entities": []}
+        ],
+        "responses": 
+        [
+          {"text": "Goodbye! Have a great day!", "entities": []}, 
+          {"text": "See you later! Don't hesitate to ask if you need help.", "entities": []}, 
+          {"text": "Farewell! If you need me, I'll be here.", "entities": []}
+        ]
       },
       {
         "tag": "thanks",
-        "patterns": ["thank you", "thanks", "appreciate it", "that's helpful"],
-        "responses": ["You're welcome! If you need more help, just ask.", "No problem! Let me know if you need anything else.", "Happy to help!"]
+        "patterns":
+        [
+          {"text": "thank you", "entities": []},
+          {"text": "thanks", "entities": []},
+          {"text": "appreciate it", "entities": []},
+          {"text": "that's helpful", "entities": []}
+        ],
+        "responses":
+        [
+          {"text": "You're welcome! If you need more help, just ask.", "entities": []},
+          {"text": "No problem! Let me know if you need anything else.", "entities": []},
+          {"text": "Happy to help!", "entities": []}
+        ]
       },
       {
         "tag": "name",
-        "patterns": ["what's your name", "who are you", "tell me your name"],
-        "responses": ["I'm your ReminderBot! I'm here to help you with reminders and events."]
+        "patterns":
+        [
+          {"text": "what's your name", "entities": []},
+          {"text": "who are you", "entities": []},
+          {"text": "tell me your name", "entities": []}
+        ],
+        "responses":
+        [
+          {"text": "I'm your ReminderBot! I'm here to help you with reminders and events.", "entities": []}
+        ]
       },
       {
         "tag": "about",
-        "patterns": ["tell me about yourself", "what do you do", "what's your purpose"],
-        "responses": ["I'm ReminderBot, an AI chatbot designed to help you create, manage, and delete reminders and events."]
+        "patterns":
+        [
+          {"text": "tell me about yourself", "entities": []},
+          {"text": "what do you do", "entities": []},
+          {"text": "what's your purpose", "entities": []}
+        ],
+        "responses":
+        [
+          {"text": "I'm ReminderBot, an AI chatbot designed to help you create, manage, and delete reminders and events.", "entities": []}
+        ]
       },
       {
         "tag": "help",
-        "patterns": ["help", "how do you work", "what can you do"],
-        "responses": ["I can help you create, manage, and delete reminders and events. Just tell me what you need, and I'll assist you."]
+        "patterns":
+        [
+          {"text": "help", "entities": []},
+          {"text": "how do you work", "entities": []},
+          {"text": "what can you do", "entities": []}
+        ],
+        "responses":
+        [
+          {"text": "I can help you create, manage, and delete reminders and events. Just tell me what you need, and I'll assist you.", "entities": []}
+        ]
       },
       {
         "tag": "complaint",
-        "patterns": ["something is wrong", "it's not working", "there's an issue"],
-        "responses": ["I'm sorry to hear that! Please provide more details so I can help you better.", "What seems to be the problem? I'll do my best to assist you."]
+        "patterns":
+        [
+          {"text": "something is wrong", "entities": []},
+          {"text": "it's not working", "entities": []},
+          {"text": "there's an issue", "entities": []}
+        ],
+        "responses":
+        [
+          {"text": "I'm sorry to hear that! Please provide more details so I can help you better.", "entities": []},
+          {"text": "What seems to be the problem? I'll do my best to assist you.", "entities": []}
+        ]
       },
       {
         "tag": "setting_reminder",
-        "patterns": [
-          "Set a reminder",
-          "Create a reminder",
-          "Remind me to",
-          {
-            "text": "Set a reminder to {reminder_text} on {date} at {time}",
-            "entities": ["reminder_text", "date", "time"]
-          },
-          {
-            "text": "Remind me to {reminder_text} tomorrow at {time}",
-            "entities": ["reminder_text", "time"]
-          },
-          {
-            "text": "Create a reminder for {date} to {reminder_text}",
-            "entities": ["date", "reminder_text"]
-          }
+        "patterns": 
+        [
+          {"text": "Set a reminder", "entities": []},
+          {"text": "Create a reminder", "entities": []},
+          {"text": "Remind me to", "entities": []},
+          {"text": "Set a reminder to {reminder_text} on {date} at {time}", "entities": ["reminder_text", "date", "time"]},
+          {"text": "Remind me to {reminder_text} tomorrow at {time}", "entities": ["reminder_text", "time"]},
+          {"text": "Create a reminder for {date} to {reminder_text}", "entities": ["date", "reminder_text"]}
         ],
-        "responses": [
-          "Sure, what's the date and time of the reminder?",
-          "Of course, please provide me with the details, date, and time for the reminder.",
-          {
-            "text": "Creating a reminder for {date} to {reminder_text}",
-            "entities": ["date", "reminder_text"]
-          }
+        "responses": 
+        [
+          {"text": "Sure, what's the date and time of the reminder?", "entities": []},
+          {"text": "Of course, please provide me with the details, date, and time for the reminder.", "entities": []},
+          {"text": "Creating a reminder for {date} to {reminder_text}","entities": ["date", "reminder_text"]}
         ]
       },
       {
         "tag": "deleting_reminder",
-        "patterns": [
+        "patterns": 
+        [
           {"text": "Delete a reminder", "entities": []},
           {"text": "Remove a reminder", "entities": []},
           {"text": "Cancel a reminder", "entities": []},
-          {"text": "Delete the reminder for {reminder_text} on {date} at {time}", "entities": ["reminder_text", "date", "time"]},
-          {"text": "Remove the reminder to {reminder_text} tomorrow at {time}", "entities": ["reminder_text", "time"]},
-          {"text": "Cancel the {date} reminder about {reminder_text}", "entities": ["date", "reminder_text"]},
-          {"text": "Delete the reminder with ID {reminder_id}", "entities": ["reminder_id"]}],
-        "responses": [{
-            "text": "Which reminder would you like to delete? Please provide me with the details.",
-            "entities": []
-          },
-          {
-            "text": "Sure, tell me more about the reminder you want to remove, and I'll delete it for you.",
-            "entities": []
-          },
-          {
-            "text": "Deleting the reminder with ID {reminder_id}",
-            "entities": ["reminder_id"]
-          },
-          {
-            "text": "Canceling the {date} reminder about {reminder_text}",
-            "entities": ["date", "reminder_text"]
-          }
+          {"text": "Delete the reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Remove the reminder to {reminder_text} tomorrow at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Cancel the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Delete the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}]}
+        ],
+        "responses":
+        [
+          {"text": "Which reminder would you like to delete? Please provide me with the details.", "entities": []},
+          {"text": "Sure, tell me more about the reminder you want to remove, and I'll delete it for you.", "entities": []},
+          {"text": "Deleting the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}]},
+          {"text": "Canceling the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]}
         ]
       },
       
       {
         "tag": "listing_reminders",
-        "patterns": [
-          "List reminders",
-          "Show me my reminders",
-          "What are my reminders?"
+        "patterns":
+        [
+          {"text": "List reminders", "entities": []},
+          {"text": "Show me my reminders", "entities": []},
+          {"text": "What are my reminders?", "entities": []}
         ],
-        "responses": [
-          "Here are your reminders:",
-          "These are your current reminders:"
+        "responses":
+        [
+          {"text": "Here are your reminders:", "entities": []},
+          {"text": "These are your current reminders:", "entities": []}
         ]
       },
       {
         "tag": "updating_reminder",
-        "patterns": [
-          "Update a reminder",
-          "Change a reminder",
-          "Edit a reminder"
+        "patterns": 
+        [
+          {"text": "Update a reminder", "entities": []},
+          {"text": "Change a reminder", "entities": []},
+          {"text": "Edit a reminder", "entities": []}
         ],
-        "responses": [
-          "Which reminder would you like to update? Please provide me with the details.",
-          "Sure, tell me more about the reminder you want to update, and I'll help you make the necessary changes."
+        "responses":
+        [
+          {"text": "Which reminder would you like to update? Please provide me with the details.", "entities": []},
+          {"text": "Sure, tell me more about the reminder you want to update, and I'll help you make the necessary changes.", "entities": []}
         ]
       },
       {
         "tag": "saving_event",
-        "patterns": [
-          "Save an event",
-          "Create an event",
-          "Add an event"
+        "patterns":
+        [
+          {"text": "Save an event", "entities": []},
+          {"text": "Create an event", "entities": []},
+          {"text": "Add an event", "entities": []}
         ],
-        "responses": [
-          "Sure, what's the date, time, and details of the event?",
-          "Of course, please provide me with the details, date, and time for the event."
+        "responses":
+        [
+          {"text": "Sure, what's the date, time, and details of the event?", "entities": []},
+          {"text": "Of course, please provide me with the details, date, and time for the event.", "entities": []}
         ]
       },
       {
         "tag": "deleting_event",
-        "patterns": [
-          "Delete an event",
-          "Remove an event",
-          "Cancel an event"
+        "patterns": 
+        [
+          {"text": "Delete an event", "entities": []},
+          {"text": "Remove an event", "entities": []},
+          {"text": "Cancel an event", "entities": []}
         ],
         "responses": [
-          "Which event would you like to delete? Please provide me with the details.",
-          "Sure, tell me more about the event you want to remove, and I'll delete it for you."
+          {"text": "Which event would you like to delete? Please provide me with the details.", "entities": []},
+          {"text": "Sure, tell me more about the event you want to remove, and I'll delete it for you.", "entities": []}
         ]
       },
       {
         "tag": "listing_events",
-        "patterns": [
-          "List events",
-          "Show me my events",
-          "What are my events?"
+        "patterns": 
+        [
+          {"text": "List events", "entities": []},
+          {"text": "Show me my events", "entities": []},
+          {"text": "What are my events?", "entities": []}
         ],
-        "responses": [
-          "Here are your events:",
-          "These are your current events:"
+        "responses": 
+        [
+          {"text": "Here are your events:", "entities": []},
+          {"text": "These are your current events:", "entities": []}
         ]
       }
     ]
