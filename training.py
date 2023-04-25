@@ -20,13 +20,41 @@ classes = []
 documents = []
 ignore_letters = ['?', '!', '.', ',']
 
+#for intent in intents['intents']:
+#    for pattern in intent['patterns']:
+#        word_list = nltk.tokenize.word_tokenize(pattern)
+#        words.extend(word_list)
+#        documents.append((word_list, intent['tag']))
+#        if intent['tag'] not in classes:
+#            classes.append(intent['tag'])
 for intent in intents['intents']:
     for pattern in intent['patterns']:
-        word_list = nltk.tokenize.word_tokenize(pattern)
+        if isinstance(pattern, str):
+            word_list = nltk.tokenize.word_tokenize(pattern)
+            entities = []
+        elif isinstance(pattern, dict):
+            word_list = nltk.tokenize.word_tokenize(pattern.get('text', ''))
+            entities = pattern.get('entities', [])
         words.extend(word_list)
-        documents.append((word_list, intent['tag']))
+        documents.append((word_list, intent['tag'], entities))
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
+    
+        # Extract plain text from each response and reminder
+        if 'responses' in intent:
+            for response in intent['responses']:
+                response_text = response['text']
+                print(response_text)
+
+        if 'patterns' in intent:
+            for pattern in intent['patterns']:
+                if isinstance(pattern, dict) and 'text' in pattern:
+                    reminder_text = pattern['text']
+                    for entity in pattern.get('entities', []):
+                        reminder_text = reminder_text.replace(f'{{{entity}}}', 'some_value')
+                    print(reminder_text)
+
+
 
 words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
 words = sorted(set(words))

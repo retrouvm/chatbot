@@ -50,8 +50,21 @@ def get_response(intents_list, intents_json):
             break
     return result
 
+goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit']
+
 while True:
     message = input("")
     ints = predict_class(message)
-    res = get_response(ints, intents)
-    print(res)
+    #res = get_response(ints, intents)
+    #exit
+    #print(res)
+    if any(word in goodbye_statements for word in message.split()):
+        print('Type "exit" if you want to end this chat')
+        next_input = input('> ').lower().strip()
+        if next_input == 'exit':
+            print('Goodbye!')
+            break
+    else:
+        # Process user input
+        response = get_response(ints, intents)
+        print(response)
