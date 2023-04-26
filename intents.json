@@ -172,6 +172,24 @@
         ]
       },
       {
+        "tag": "create_event",
+        "patterns": 
+        [
+          {"text": "Set a reminder", "entities": []},
+          {"text": "Create a reminder", "entities": []},
+          {"text": "Remind me to", "entities": []},
+          {"text": "Set a reminder to {reminder_text} on {date} at {time}", "entities": ["reminder_text", "date", "time"]},
+          {"text": "Remind me to {reminder_text} tomorrow at {time}", "entities": ["reminder_text", "time"]},
+          {"text": "Create a reminder for {date} to {reminder_text}", "entities": ["date", "reminder_text"]}
+        ],
+        "responses": 
+        [
+          {"text": "Sure, what's the date and time of the reminder?", "entities": []},
+          {"text": "Of course, please provide me with the details, date, and time for the reminder.", "entities": []},
+          {"text": "Creating a reminder for {date} to {reminder_text}","entities": ["date", "reminder_text"]}
+        ]
+      },
+      {
         "tag": "saving_event",
         "patterns":
         [
@@ -193,7 +211,8 @@
           {"text": "Remove an event", "entities": []},
           {"text": "Cancel an event", "entities": []}
         ],
-        "responses": [
+        "responses": 
+        [
           {"text": "Which event would you like to delete? Please provide me with the details.", "entities": []},
           {"text": "Sure, tell me more about the event you want to remove, and I'll delete it for you.", "entities": []}
         ]
