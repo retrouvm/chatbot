@@ -349,7 +349,8 @@
     },
     {
       "tag": "small_talk",
-      "patterns": [
+      "patterns": 
+      [
           {"text": "Hi", "entities": []},
           {"text": "Hello", "entities": []},
           {"text": "How are you?", "entities": []},
@@ -368,7 +369,8 @@
           {"text": "What's your favorite season?", "entities": []},
           {"text": "What do you think of this music/movie/tv show?", "entities": []}
       ],
-      "responses": [
+      "responses": 
+      [
           {"text": "Hello! How can I assist you today?", "entities": []},
           {"text": "I'm doing well, thanks! How about you?", "entities": []},
           {"text": "Not much, just chatting with you. How about you?", "entities": []},
@@ -390,6 +392,8 @@
           {"text": "I recently watched a really good movie called 'Inception'. Have you seen it?", "entities": []},
           {"text": "I enjoy listening to all types of music, but my favorite genre is electronic. How about you?", "entities": []},
           {"text": "I'm just a computer program, so I don't have a favorite book. But I can help you find recommendations if you'd like!", "entities": []}
+      ]
+    }
     
       
     ]
