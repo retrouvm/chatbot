@@ -57,11 +57,16 @@
         [
           {"text": "what's your name", "entities": []},
           {"text": "who are you", "entities": []},
-          {"text": "tell me your name", "entities": []}
+          {"text": "tell me your name", "entities": []},
+          {"text": "tell me your name", "entities": []},
+          {"text": "what should I call you", "entities": []}
         ],
         "responses":
         [
-          {"text": "I'm your ReminderBot! I'm here to help you with reminders and events.", "entities": []}
+          {"text": "I'm your ReminderBot! I'm here to help you with reminders and events.", "entities": []},
+          {"text": "I'm ReminderBot. Nice to meet you! How may I help you?", "entities": []},
+          {"text": "You can call me ReminderBot. What can I do for you?", "entities": []},
+          {"text": "I go by the name ReminderBot. What can I assist you with?", "entities": []}
         ]
       },
       {
@@ -74,7 +79,10 @@
         ],
         "responses":
         [
-          {"text": "I'm ReminderBot, an AI chatbot designed to help you create, manage, and delete reminders and events.", "entities": []}
+          {"text": "I'm ReminderBot, an AI chatbot designed to help you create, manage, and delete reminders and events.", "entities": []},
+          {"text": "I'm ReminderBot. Nice to meet you! How may I help you?", "entities": []},
+          {"text": "You can call me ReminderBot. What can I do for you?", "entities": []},
+          {"text": "I go by the name ReminderBot. What can I assist you with?", "entities": []}
         ]
       },
       {
@@ -83,11 +91,14 @@
         [
           {"text": "help", "entities": []},
           {"text": "how do you work", "entities": []},
-          {"text": "what can you do", "entities": []}
+          {"text": "what can you do", "entities": []},
+          {"text": "what are your features", "entities": []}
         ],
         "responses":
         [
-          {"text": "I can help you create, manage, and delete reminders and events. Just tell me what you need, and I'll assist you.", "entities": []}
+          {"text": "I can help you create, manage, and delete reminders and events. Just tell me what you need, and I'll assist you.", "entities": []},
+          {"text": "I can create reminders for you, help you manage them, and even set up events. Just tell me what you need help with, and I'll be happy to assist you.", "entities": []},
+          {"text": "I'm here to help you with all your reminder and event management needs. Just ask me, and I'll be glad to assist you.", "entities": []}
         ]
       },
       {
@@ -96,12 +107,26 @@
         [
           {"text": "something is wrong", "entities": []},
           {"text": "it's not working", "entities": []},
-          {"text": "there's an issue", "entities": []}
+          {"text": "there's an issue", "entities": []},
+          {"text": "I have a problem", "entities": []},
+          {"text": "it's not functioning properly", "entities": []},
+          {"text": "it's not doing what it's supposed to", "entities": []},
+          {"text": "I'm having trouble", "entities": []},
+          {"text": "I'm experiencing issues", "entities": []},
+          {"text": "I'm not happy with this", "entities": []},
+          {"text": "this isn't what I expected", "entities": []},
+          {"text": "no, that's not what I mean", "entities": []},
+          {"text": "that's wrong", "entities": []}
         ],
         "responses":
         [
           {"text": "I'm sorry to hear that! Please provide more details so I can help you better.", "entities": []},
-          {"text": "What seems to be the problem? I'll do my best to assist you.", "entities": []}
+          {"text": "What seems to be the problem? I'll do my best to assist you.", "entities": []},
+          {"text": "I see, could you give me more information so I can better understand?", "entities": []},
+          {"text": "What seems to be the problem? I'll do my best to assist you.", "entities": []},
+          {"text": "Okay, I apologize for the mistake. Can you provide more details?", "entities": []},
+          {"text": "I'm sorry, please correct me if I'm wrong. What did you mean?", "entities": []},
+          {"text": "I apologize for the inconvenience. Can you please give me more information about the issue?", "entities": []}
         ]
       },
       {
@@ -132,14 +157,21 @@
           {"text": "Delete the reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
           {"text": "Remove the reminder to {reminder_text} tomorrow at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "time", "value": "{time}"}]},
           {"text": "Cancel the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
-          {"text": "Delete the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}]}
-        ],
+          {"text": "Delete the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}]},
+          {"text": "Remove {reminder_text} from my reminders", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Can you delete {reminder_text} from my schedule", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Can you remove {reminder_text} from my reminders", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]}
+          ],
         "responses":
         [
           {"text": "Which reminder would you like to delete? Please provide me with the details.", "entities": []},
           {"text": "Sure, tell me more about the reminder you want to remove, and I'll delete it for you.", "entities": []},
           {"text": "Deleting the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}]},
-          {"text": "Canceling the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]}
+          {"text": "Canceling the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Sure, what do you want to update about your reminder?", "entities": []},
+          {"text": "No problem, please provide me with the details of the update.", "entities": []},
+          {"text": "Ok, I have updated your reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
+          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]}
         ]
       },
       
@@ -149,12 +181,23 @@
         [
           {"text": "List reminders", "entities": []},
           {"text": "Show me my reminders", "entities": []},
-          {"text": "What are my reminders?", "entities": []}
+          {"text": "What are my reminders?", "entities": []},
+          {"text": "What are my upcoming appointments?", "entities": []},
+          {"text": "Can you list my reminders?", "entities": []},
+          {"text": "What do I have scheduled?", "entities": []},
+          {"text": "Show me my schedule", "entities": []},
+          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "date"}]},
+          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "date"}]}
         ],
         "responses":
         [
           {"text": "Here are your reminders:", "entities": []},
-          {"text": "These are your current reminders:", "entities": []}
+          {"text": "These are your current reminders:", "entities": []},
+          {"text": "Sure, here are your upcoming appointments:", "entities": []},
+          {"text": "Let me check, here's what you have scheduled:", "entities": []},
+          {"text": "Your schedule for the next few days looks like this:", "entities": []},
+          {"text": "You have the following reminders set:", "entities": []},
+          {"text": "On {date}, you have the following reminders set:", "entities": [{"type": "date", "value": "date"}]}
         ]
       },
       {
@@ -163,27 +206,69 @@
         [
           {"text": "Update a reminder", "entities": []},
           {"text": "Change a reminder", "entities": []},
-          {"text": "Edit a reminder", "entities": []}
+          {"text": "Edit a reminder", "entities": []},
+          {"text": "Modify a reminder", "entities": []},
+          {"text": "Update my reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Change my reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
+          {"text": "Modify my reminder for {reminder_text} to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
+          {"text": "Can you update my reminder for {reminder_text}?", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]}
         ],
         "responses":
         [
           {"text": "Which reminder would you like to update? Please provide me with the details.", "entities": []},
-          {"text": "Sure, tell me more about the reminder you want to update, and I'll help you make the necessary changes.", "entities": []}
+          {"text": "Sure, tell me more about the reminder you want to update, and I'll help you make the necessary changes.", "entities": []},
+          {"text": "Sure, what do you want to update about your reminder?", "entities": []},
+          {"text": "No problem, please provide me with the details of the update.", "entities": []},
+          {"text": "Ok, I have updated your reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
+          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]}
         ]
       },
-      
       {
-        "tag": "saving_event",
-        "patterns":
+        "tag": "creating_event",
+        "patterns": 
         [
-          {"text": "Save an event", "entities": []},
           {"text": "Create an event", "entities": []},
-          {"text": "Add an event", "entities": []}
+          {"text": "Set up an event", "entities": []},
+          {"text": "Add an event", "entities": []},
+          {"text": "Schedule an event", "entities": []},
+          {"text": "Plan an event", "entities": []},
+          {"text": "Organize an event", "entities": []},
+          {"text": "Can you help me set up an event?", "entities": []},
+          {"text": "I need to create an event", "entities": []},
+          {"text": "Can you schedule an event for me?", "entities": []},
+          {"text": "Let's plan an event", "entities": []},
+          {"text": "I want to organize an event", "entities": []},
+          {"text": "Create an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Set up an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Add an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Schedule an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Plan an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Organize an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Save an event", "entities": []},
+          {"text": "Save this event", "entities": []},
+          {"text": "Save", "entities": []},
+          {"text": "Save this", "entities": []},
+          {"text": "Save this to my events", "entities": []},
+          {"text": "Save this event to my calendar", "entities": []},
+          {"text": "Add this to my calendar", "entities": []},
+          {"text": "Add this event to my schedule", "entities": []},
+          {"text": "Can you save this event for me?", "entities": []},
+          {"text": "Can you add this to my calendar?", "entities": []}
         ],
-        "responses":
+        "responses": 
         [
-          {"text": "Sure, what's the date, time, and details of the event?", "entities": []},
-          {"text": "Of course, please provide me with the details, date, and time for the event.", "entities": []}
+          {"text": "Sure, what date and time would you like to schedule the event?", "entities": []},
+          {"text": "Of course, please provide me with the details, date, and time for the event.", "entities": []},
+          {"text": "Great, I've scheduled the event on {date} at {time} with {event_text}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Sure, what would you like to name the event?", "entities": []},
+          {"text": "What name would you like to give this event?", "entities": []},
+          {"text": "What should I call this event in your calendar?", "entities": []},
+          {"text": "Sure, the event details have been saved.", "entities": []},
+          {"text": "Great, I have saved the event to your calendar.", "entities": []},
+          {"text": "The event details have been added to your schedule.", "entities": []},
+          {"text": "The event has been saved. Is there anything else you need help with?", "entities": []},
+          {"text": "Done. Your event has been saved to your calendar.", "entities": []},
+          {"text": "Event saved. Do you need help with anything else?", "entities": []}
         ]
       },
       {
@@ -192,12 +277,20 @@
         [
           {"text": "Delete an event", "entities": []},
           {"text": "Remove an event", "entities": []},
-          {"text": "Cancel an event", "entities": []}
+          {"text": "Cancel an event", "entities": []},
+          {"text": "Delete {event_text} event", "entities": [{"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Remove {event_text} from my events", "entities": [{"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Can you delete {event_text} from my schedule", "entities": [{"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Can you remove {event_text} from my events", "entities": [{"type": "event_text", "value": "{event_text}"}]}
         ],
         "responses": 
         [
           {"text": "Which event would you like to delete? Please provide me with the details.", "entities": []},
-          {"text": "Sure, tell me more about the event you want to remove, and I'll delete it for you.", "entities": []}
+          {"text": "Sure, tell me more about the event you want to remove, and I'll delete it for you.", "entities": []},
+          {"text": "Sure, which event do you want to delete?", "entities": []},
+          {"text": "Okay, please provide the name of the event you want to delete", "entities": []},
+          {"text": "Deleting {event_text} from your schedule", "entities": [{"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Okay, I have removed {event_text} from your events", "entities": [{"type": "event_text", "value": "{event_text}"}]}
         ]
       },
       {
@@ -206,13 +299,52 @@
         [
           {"text": "List events", "entities": []},
           {"text": "Show me my events", "entities": []},
-          {"text": "What are my events?", "entities": []}
+          {"text": "What are my events?", "entities": []},
+          {"text": "What are my upcoming appointments?", "entities": []},
+          {"text": "Can you list my events?", "entities": []},
+          {"text": "What do I have scheduled?", "entities": []},
+          {"text": "Show me my schedule", "entities": []},
+          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "date"}]},
+          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "date"}]}
         ],
         "responses": 
         [
           {"text": "Here are your events:", "entities": []},
-          {"text": "These are your current events:", "entities": []}
+          {"text": "These are your current events:", "entities": []},
+          {"text": "Sure, here are your upcoming appointments:", "entities": []},
+          {"text": "Let me check, here's what you have scheduled:", "entities": []},
+          {"text": "Your schedule for the next few days looks like this:", "entities": []},
+          {"text": "You have the following events planned:", "entities": []},
+          {"text": "On {date}, you have the following events planned:", "entities": [{"type": "date", "value": "date"}]}
         ]
-      }
+      },
+      {
+        "tag": "feelings",
+        "patterns": 
+        [
+            {"text": "How are you feeling?", "entities": []},
+            {"text": "How do you feel today?", "entities": []},
+            {"text": "What's your mood like?", "entities": []},
+            {"text": "How is your day going?", "entities": []},
+            {"text": "Are you feeling well today?", "entities": []},
+            {"text": "How do you feel about {topic}?", "entities": [{"type": "topic", "value": "topic"}]},
+            {"text": "I'm feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm {emotion} today", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "{person} is making me {emotion}", "entities": [{"type": "person", "value": "person"}, {"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm feeling {emotion} because of {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]}
+        ],
+        "responses": 
+        [
+            {"text": "I'm just a machine, so I don't have feelings. How about you? How are you feeling today?", "entities": []},
+            {"text": "I'm sorry to hear that. What's been bothering you?", "entities": []},
+            {"text": "That sounds tough. Do you want to talk about it?", "entities": []},
+            {"text": "It's good to hear that you're feeling {emotion}. What's making you feel that way?", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm glad to hear that you're feeling {emotion}. Is there anything you'd like to talk about?", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm sorry to hear that {person} is making you feel {emotion}. Have you talked to them about it?", "entities": [{"type": "person", "value": "person"}, {"type": "emotion", "value": "emotion"}]},
+            {"text": "I understand how {reason} could make you feel {emotion}. Do you want to talk about it?", "entities": [{"type": "reason", "value": "reason"}, {"type": "emotion", "value": "emotion"}]}
+        ]
+    }
+    
+      
     ]
 }
