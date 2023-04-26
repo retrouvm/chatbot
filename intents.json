@@ -136,15 +136,18 @@
           {"text": "Set a reminder", "entities": []},
           {"text": "Create a reminder", "entities": []},
           {"text": "Remind me to", "entities": []},
-          {"text": "Set a reminder to {reminder_text} on {date} at {time}", "entities": ["reminder_text", "date", "time"]},
-          {"text": "Remind me to {reminder_text} tomorrow at {time}", "entities": ["reminder_text", "time"]},
-          {"text": "Create a reminder for {date} to {reminder_text}", "entities": ["date", "reminder_text"]}
+          {"text": "Set a reminder to {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Remind me to {reminder_text} tomorrow at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Create a reminder for {date} to {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]}
         ],
         "responses": 
         [
           {"text": "Sure, what's the date and time of the reminder?", "entities": []},
           {"text": "Of course, please provide me with the details, date, and time for the reminder.", "entities": []},
-          {"text": "Creating a reminder for {date} to {reminder_text}","entities": ["date", "reminder_text"]}
+          {"text": "Creating a reminder for {date} to {reminder_text}","entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Reminder has been set for {date} at {time}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Your reminder has been created for {date} at {time}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Got it! I've set a reminder for {date} at {time} to {reminder_text}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "reminder_text", "value": "{reminder_text}"}]}
         ]
       },
       {
@@ -343,7 +346,50 @@
             {"text": "I'm sorry to hear that {person} is making you feel {emotion}. Have you talked to them about it?", "entities": [{"type": "person", "value": "person"}, {"type": "emotion", "value": "emotion"}]},
             {"text": "I understand how {reason} could make you feel {emotion}. Do you want to talk about it?", "entities": [{"type": "reason", "value": "reason"}, {"type": "emotion", "value": "emotion"}]}
         ]
-    }
+    },
+    {
+      "tag": "small_talk",
+      "patterns": [
+          {"text": "Hi", "entities": []},
+          {"text": "Hello", "entities": []},
+          {"text": "How are you?", "entities": []},
+          {"text": "What's up?", "entities": []},
+          {"text": "How's your day going?", "entities": []},
+          {"text": "What do you like to do for fun?", "entities": []},
+          {"text": "Do you have any hobbies?", "entities": []},
+          {"text": "What's your favorite book/movie/song?", "entities": []},
+          {"text": "Tell me about yourself", "entities": []},
+          {"text": "Where are you from?", "entities": []},
+          {"text": "What's the weather like?", "entities": []},
+          {"text": "What's your favorite food?", "entities": []},
+          {"text": "What's your favorite color?", "entities": []},
+          {"text": "Do you have any pets?", "entities": []},
+          {"text": "What's your favorite animal?", "entities": []},
+          {"text": "What's your favorite season?", "entities": []},
+          {"text": "What do you think of this music/movie/tv show?", "entities": []}
+      ],
+      "responses": [
+          {"text": "Hello! How can I assist you today?", "entities": []},
+          {"text": "I'm doing well, thanks! How about you?", "entities": []},
+          {"text": "Not much, just chatting with you. How about you?", "entities": []},
+          {"text": "My day is going well, thanks for asking. How about yours?", "entities": []},
+          {"text": "I'm a chatbot, so I don't have hobbies like humans do. But I love helping people!", "entities": []},
+          {"text": "I'm a chatbot, so I don't have favorite books/movies/songs like humans do. But I'm always learning and discovering new things!", "entities": []},
+          {"text": "I'm a chatbot, so I don't have a self like humans do. But I'm here to assist you with anything you need!", "entities": []},
+          {"text": "I'm a chatbot, so I don't have a physical location like humans do. But I'm here to help you wherever you are!", "entities": []},
+          {"text": "I love all kinds of food! But since I'm a chatbot, I don't actually eat anything.", "entities": []},
+          {"text": "I don't have a favorite color, since I don't see like humans do. But I can still help you with anything you need!", "entities": []},
+          {"text": "I don't have any pets, since I'm a chatbot. But I'm always here to assist you!", "entities": []},
+          {"text": "I love all kinds of animals! But since I'm a chatbot, I don't actually interact with them like humans do.", "entities": []},
+          {"text": "Hello! How can I help you today?", "entities": []},
+          {"text": "I'm doing well, thanks for asking! How about you?", "entities": []},
+          {"text": "Not much, just assisting users like you. How can I help you today?", "entities": []},
+          {"text": "It's going great, thanks for asking! How can I assist you today?", "entities": []},
+          {"text": "I'm just a computer program, so I don't have any hobbies. But I'm here to help you with your questions!", "entities": []},
+          {"text": "I like to chat with users like you in my free time. How can I assist you today?", "entities": []},
+          {"text": "I recently watched a really good movie called 'Inception'. Have you seen it?", "entities": []},
+          {"text": "I enjoy listening to all types of music, but my favorite genre is electronic. How about you?", "entities": []},
+          {"text": "I'm just a computer program, so I don't have a favorite book. But I can help you find recommendations if you'd like!", "entities": []}
     
       
     ]
