@@ -46,8 +46,11 @@ def get_response(intents_list, intents_json):
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
         if i['tag'] == tag:
-            result = random.choice(i['responses'])
+            #result = random.choice(i['responses'])
+            result = random.choice(i['responses'])['text']
             break
+            #return result['text']
+    #return "I'm sorry, I didn't understand what you're looking for. Can you please try again?"
     return result
 
 goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit']
@@ -55,16 +58,12 @@ goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit']
 while True:
     message = input("")
     ints = predict_class(message)
-    #res = get_response(ints, intents)
-    #exit
-    #print(res)
+    res = get_response(ints, intents)
+    print(res)
+    
     if any(word in goodbye_statements for word in message.split()):
         print('Type "exit" if you want to end this chat')
         next_input = input('> ').lower().strip()
         if next_input == 'exit':
             print('Goodbye!')
             break
-    else:
-        # Process user input
-        response = get_response(ints, intents)
-        print(response)
