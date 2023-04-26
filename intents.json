@@ -223,7 +223,13 @@
           {"text": "Sure, what do you want to update about your reminder?", "entities": []},
           {"text": "No problem, please provide me with the details of the update.", "entities": []},
           {"text": "Ok, I have updated your reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
-          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]}
+          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
+          {"text": "What changes do you want to make to reminder id, {reminder_id}, for {reminder_text}?", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Got it, I'll update reminder id, {reminder_id}, for {reminder_text} to {new_reminder} on {date} at {time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_reminder", "value": "{new_reminder}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Sure, I'll update reminder id, {reminder_id}, for {reminder_text} on {date} at {time} to {new_reminder}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_reminder", "value": "{new_reminder}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Alright, the date of reminder id, {reminder_id}, for {reminder_text} has been changed to {new_date}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
+          {"text": "I've rescheduled reminder id, {reminder_id}, for {reminder_text} to {new_date} at {time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Noted, the time of reminder id, {reminder_id}, for {reminder_text} has been updated to {new_time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_time", "value": "{new_time}"}]}
         ]
       },
       {
@@ -323,7 +329,8 @@
       },
       {
         "tag": "updating_event",
-        "patterns": [
+        "patterns": 
+        [
           {"text": "I need to update an event", "entities": []},
           {"text": "Update an event", "entities": []},
           {"text": "Can you help me update an event?", "entities": []},
@@ -337,7 +344,8 @@
           {"text": "I need to change the time of event id, {event_id}, for {event_text} to {new_time}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}]},
           {"text": "Can you move event id, {event_id}, for {event_text} to {new_time} on {date}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}, {"type": "date", "value": "{date}"}]}
         ],
-        "responses": [
+        "responses": 
+        [
           {"text": "Sure, what's the name of the event you want to update?", "entities": []},
           {"text": "Of course, please provide me with the name of the event you want to update.", "entities": []},
           {"text": "What changes do you want to make to event id, {event_id}, for {event_text}?", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}]},
@@ -421,7 +429,5 @@
           {"text": "I'm just a computer program, so I don't have a favorite book. But I can help you find recommendations if you'd like!", "entities": []}
       ]
     }
-    
-      
     ]
 }
