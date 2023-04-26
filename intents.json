@@ -189,8 +189,8 @@
           {"text": "Can you list my reminders?", "entities": []},
           {"text": "What do I have scheduled?", "entities": []},
           {"text": "Show me my schedule", "entities": []},
-          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "date"}]},
-          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "date"}]}
+          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "{date}"}]},
+          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "{date}"}]}
         ],
         "responses":
         [
@@ -200,7 +200,7 @@
           {"text": "Let me check, here's what you have scheduled:", "entities": []},
           {"text": "Your schedule for the next few days looks like this:", "entities": []},
           {"text": "You have the following reminders set:", "entities": []},
-          {"text": "On {date}, you have the following reminders set:", "entities": [{"type": "date", "value": "date"}]}
+          {"text": "On {date}, you have the following reminders set:", "entities": [{"type": "date", "value": "{date}"}]}
         ]
       },
       {
@@ -307,8 +307,8 @@
           {"text": "Can you list my events?", "entities": []},
           {"text": "What do I have scheduled?", "entities": []},
           {"text": "Show me my schedule", "entities": []},
-          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "date"}]},
-          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "date"}]}
+          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "{date}"}]},
+          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "{date}"}]}
         ],
         "responses": 
         [
@@ -318,7 +318,34 @@
           {"text": "Let me check, here's what you have scheduled:", "entities": []},
           {"text": "Your schedule for the next few days looks like this:", "entities": []},
           {"text": "You have the following events planned:", "entities": []},
-          {"text": "On {date}, you have the following events planned:", "entities": [{"type": "date", "value": "date"}]}
+          {"text": "On {date}, you have the following events planned:", "entities": [{"type": "date", "value": "{date}"}]}
+        ]
+      },
+      {
+        "tag": "updating_event",
+        "patterns": [
+          {"text": "I need to update an event", "entities": []},
+          {"text": "Update an event", "entities": []},
+          {"text": "Can you help me update an event?", "entities": []},
+          {"text": "I want to modify an event", "entities": []},
+          {"text": "I need to make some changes to an event", "entities": []},
+          {"text": "Change event id, {event_id}, for {event_text} to {new_event}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}]},
+          {"text": "Can you update event id, {event_id}, for {event_text} to {new_event} on {date} at {time}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "I need to update event id, {event_id}, for {event_text} on {date} at {time} to {new_event}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Change the date of event id, {event_id}, for {event_text} to {new_date}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}]},
+          {"text": "Can you reschedule event id, {event_id}, for {event_text} to {new_date} at {time}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "I need to change the time of event id, {event_id}, for {event_text} to {new_time}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}]},
+          {"text": "Can you move event id, {event_id}, for {event_text} to {new_time} on {date}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}, {"type": "date", "value": "{date}"}]}
+        ],
+        "responses": [
+          {"text": "Sure, what's the name of the event you want to update?", "entities": []},
+          {"text": "Of course, please provide me with the name of the event you want to update.", "entities": []},
+          {"text": "What changes do you want to make to event id, {event_id}, for {event_text}?", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Got it, I'll update event id, {event_id}, for {event_text} to {new_event} on {date} at {time}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Sure, I'll update event id, {event_id}, for {event_text} on {date} at {time} to {new_event}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Alright, the date of event id, {event_id}, for {event_text} has been changed to {new_date}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}]},
+          {"text": "I've rescheduled event id, {event_id}, for {event_text} to {new_date} at {time}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "time", "value": "{time}"}]},
+          {"text": "Noted, the time of event id, {event_id}, for {event_text} has been updated to {new_time}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}]}
         ]
       },
       {
