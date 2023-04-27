@@ -176,7 +176,50 @@
       "entities": [{"start": 25,"end": 30,"label": "date"}]},
 
       {"text": "Create an event for my friend's birthday party on July 14th at 7 pm.", 
-      "entities": [{"start": 23,"end": 46,"label": "event_text"},{"start": 50,"end": 59,"label": "date"},{"start": 63,"end": 67,"label": "time"}]}
+      "entities": [{"start": 23,"end": 46,"label": "event_text"},{"start": 50,"end": 59,"label": "date"},{"start": 63,"end": 67,"label": "time"}]},
 
+      {"text": "I need to update the name of my meeting with Sarah to Sales Strategy", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Reschedule my reminder to water the plants for next Saturday at 9am", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Can you move my dentist appointment to next week", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Update the date of my team meeting to next Thursday at 3pm", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Can you change the time of my reminder to take my medication to 10am?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "I want to change the name of my reminder for the doctor's appointment.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Move my appointment with Dr. Smith to next Tuesday at 2pm.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Update the time of my team meeting to 11am.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Change the name of my event with Mary to Monthly Check-In.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Create a new event for the product launch on May 5th.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Set up a company-wide training session for next month.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Update the time of the conference call to 1pm.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Create a new event for the client meeting on June 10th.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Can you remind me of the details for event E1234?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "I need to update the time of event E5678 to 3pm.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Can you move my appointment with Dr. Smith to next Tuesday at 2pm? The event ID is E4321.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "What's the event ID for the company-wide training session next month?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "Can you delete my reminder with ID R2345?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "I want to change the name of event E8765 to Annual General Meeting", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "What's the event ID for my meeting with John next Wednesday?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": "I need to reschedule my reminder with ID R3456 to next Monday at 10am.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
     ]
 }           
+
+{"text": , "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
