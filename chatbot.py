@@ -53,7 +53,7 @@ def get_response(intents_list, intents_json):
     #return "I'm sorry, I didn't understand what you're looking for. Can you please try again?"
     return result
 
-goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit']
+goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit', 'stop', 'stupid', 'no', 'exit', 'leave']
 
 while True:
     message = input("")

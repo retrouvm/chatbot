@@ -116,7 +116,9 @@
           {"text": "I'm not happy with this", "entities": []},
           {"text": "this isn't what I expected", "entities": []},
           {"text": "no, that's not what I mean", "entities": []},
-          {"text": "that's wrong", "entities": []}
+          {"text": "that's wrong", "entities": []},
+          {"text": "no", "entities": []},
+          {"text": "stop", "entities": []}
         ],
         "responses":
         [
@@ -443,6 +445,61 @@
           {"text": "I enjoy listening to all types of music, but my favorite genre is electronic. How about you?", "entities": []},
           {"text": "I'm just a computer program, so I don't have a favorite book. But I can help you find recommendations if you'd like!", "entities": []}
       ]
+    },
+    {
+      "tag": "negative_feedback",
+      "patterns": 
+      [
+        {"text": "stop talking", "entities": []},
+        {"text": "enough already", "entities": []},
+        {"text": "I don't want to talk to you", "entities": []},
+        {"text": "leave me alone", "entities": []},
+        {"text": "quiet down", "entities": []},
+        {"text": "shut your mouth", "entities": []},
+        {"text": "you're annoying", "entities": []},
+        {"text": "I hate you", "entities": []},
+        {"text": "you're stupid", "entities": []},
+        {"text": "go away", "entities": []},
+        {"text": "I don't like you", "entities": []},
+        {"text": "you're worthless", "entities": []},
+        {"text": "get lost", "entities": []},
+        {"text": "This isn't working for me", "entities": []},
+        {"text": "I'm having problems with your product", "entities": []},
+        {"text": "I'm not satisfied with the results", "entities": []},
+        {"text": "Your service is not good", "entities": []},
+        {"text": "Your product is not up to my expectations", "entities": []},
+        {"text": "I'm disappointed with you", "entities": []},
+        {"text": "I'm unhappy with what you've done", "entities": []},
+        {"text": "I'm not getting what I paid for", "entities": []},
+        {"text": "This is unacceptable", "entities": []},
+        {"text": "I'm fed up with this", "entities": []},
+        {"text": "I'm angry with you", "entities": []},
+        {"text": "You're not meeting my needs", "entities": []},
+        {"text": "You're not doing a good job", "entities": []},
+        {"text": "Your customer service is terrible", "entities": []},
+        {"text": "I want to speak with a manager", "entities": []},
+        {"text": "I demand a refund", "entities": []},
+        {"text": "This is a waste of my time", "entities": []}
+      ],
+      "responses": 
+      [
+        {"text": "I'm sorry to hear that. Can you tell me more about what's not working for you?", "entities": []},
+        {"text": "I apologize for the inconvenience. What specifically is causing the issue?", "entities": []},
+        {"text": "I'm sorry that you're not happy with our product/service. Can you give me more information so we can resolve the issue?", "entities": []},
+        {"text": "Thank you for letting me know. Can you provide more details so we can address the problem?", "entities": []},
+        {"text": "I'm sorry that you're not satisfied. Can you explain the issue more so we can improve our service/product?", "entities": []},
+        {"text": "I apologize for the inconvenience. Can you provide more information about the problem so we can fix it?", "entities": []},
+        {"text": "I'm sorry if I've said something to upset you. Please let me know how I can help.", "entities": []},
+        {"text": "I apologize if I said something you didn't like. Please let me know how I can improve.", "entities": []},
+        {"text": "I'm sorry if I'm bothering you. Please let me know how I can help, or if you'd like me to stop responding.", "entities": []},
+        {"text": "I'm sorry if I'm not meeting your needs. Please let me know if there's anything I can do to help you.", "entities": []},
+        {"text": "I'm sorry if I'm not meeting your expectations. Please let me know how I can assist you better.", "entities": []},
+        {"text": "I'm here to assist you, and I'm sorry if I'm not doing a good job. Please let me know how I can improve.", "entities": []},
+        {"text": "I'm here to help, and I don't want to be a nuisance. Please let me know if there's anything I can do to improve.", "entities": []},
+        {"text": "I apologize if I'm being too chatty. Please let me know if there's anything specific you'd like me to do.", "entities": []}
+      
+      ]
     }
+    
     ]
 }
