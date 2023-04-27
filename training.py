@@ -2,6 +2,7 @@ import random
 import json
 import pickle
 import numpy as np
+import spacy
 
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -10,6 +11,52 @@ import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
+from spacy.training.example import Example
+
+
+#function to preprocess the JSON entities file into spaCy format
+def preprocess_data(json_file):
+    data = json.loads(open(json_file).read())
+    train_data = []
+    for annotation in data["annotations"]:
+        text = annotation["text"]
+        entities = []
+        for entity in annotation["entities"]:
+            start = entity["start"]
+            end = entity["end"]
+            label = entity["label"]
+            entities.append((start, end, label))
+        train_data.append((text, {"entities": entities}))
+    return train_data
+
+
+
+#function to train the NER model
+def train_ner_model(train_data, model_path):
+    nlp = spacy.load("en_core_web_sm")
+    ner = nlp.get_pipe("ner")
+
+    for _, annotations in train_data:
+        for ent in annotations.get("entities"):
+            ner.add_label(ent[2])
+
+    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
+    with nlp.disable_pipes(*other_pipes):
+        optimizer = nlp.begin_training()
+        for iteration in range(100):
+            random.shuffle(train_data)
+            losses = {}
+            for text, annotations in train_data:
+                example = Example.from_dict(nlp.make_doc(text), annotations)
+                nlp.update([example], drop=0.5, sgd=optimizer, losses=losses)
+
+    nlp.to_disk(model_path)
+# Preprocess the data
+train_data = preprocess_data("entities.json")
+
+# Train the NER model
+train_ner_model(train_data, "ner_model")
+
 
 lemmatizer = WordNetLemmatizer()
 
@@ -20,13 +67,7 @@ classes = []
 documents = []
 ignore_letters = ['?', '!', '.', ',']
 
-#for intent in intents['intents']:
-#    for pattern in intent['patterns']:
-#        word_list = nltk.tokenize.word_tokenize(pattern)
-#        words.extend(word_list)
-#        documents.append((word_list, intent['tag']))
-#        if intent['tag'] not in classes:
-#            classes.append(intent['tag'])
+
 for intent in intents['intents']:
     for pattern in intent['patterns']:
         if isinstance(pattern, str):
