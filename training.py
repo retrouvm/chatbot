@@ -2,6 +2,7 @@ import random
 import json
 import pickle
 import numpy as np
+import spacy
 
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -10,6 +11,24 @@ import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
+from spacy.training.example import Example
+
+
+#function to preprocess the JSON entities file into spaCy format
+def preprocess_data(json_file):
+    data = json.loads(open(json_file).read())
+    train_data = []
+    for annotation in data["annotations"]:
+        text = annotation["text"]
+        entities = []
+        for entity in annotation["entities"]:
+            start = entity["start"]
+            end = entity["end"]
+            label = entity["label"]
+            entities.append((start, end, label))
+        train_data.append((text, {"entities": entities}))
+    return train_data
+
 
 lemmatizer = WordNetLemmatizer()
 
@@ -20,13 +39,7 @@ classes = []
 documents = []
 ignore_letters = ['?', '!', '.', ',']
 
-#for intent in intents['intents']:
-#    for pattern in intent['patterns']:
-#        word_list = nltk.tokenize.word_tokenize(pattern)
-#        words.extend(word_list)
-#        documents.append((word_list, intent['tag']))
-#        if intent['tag'] not in classes:
-#            classes.append(intent['tag'])
+
 for intent in intents['intents']:
     for pattern in intent['patterns']:
         if isinstance(pattern, str):
