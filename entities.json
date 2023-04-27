@@ -53,7 +53,7 @@
 
       {"text": "Remember to return the library books on March 28th at 12pm", "entities": [{"start":12, "end":36, "label": "reminder_text"}, {"start":30, "end":40, "label":"date"}, {"start":44, "end":48, "label": "time"}]},
 
-      {"text": "Remember me to walk Murray at 9am on December 31st", "entities": [{"start": 15, "end": 26, "label":"reminder_text"}, {"start": 37, "end": 50, "label": "date"}, {"start": 30, "end": 33, "label": "time"}]},
+      {"text": "Remember me to walk Murray at 4am on December 31st", "entities": [{"start": 15, "end": 26, "label":"reminder_text"}, {"start": 37, "end": 50, "label": "date"}, {"start": 30, "end": 33, "label": "time"}]},
 
       {"text": "Remember to return the library books on March 28th at 12pm", "entities": [{"start":12, "end":36, "label": "reminder_text"}, {"start":30, "end": 40, "label":"date"}, {"start": 44, "end": 48, "label": "time"}]}
     ] 
