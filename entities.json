@@ -254,7 +254,7 @@
       "entities": [{"start": 11,"end": 22,"label":"emotion" },{"start": 30,"end": 65,"label":"reason"}]},
       
       {"text": "His rude behavior made me feel angry and disappointed.", 
-      "entities": [{"start": 0,"end":17 ,"label": "reason"},{"start": 30,"end":53,"label":"emotion"},]},
+      "entities": [{"start": 0,"end":17 ,"label": "reason"},{"start": 30,"end":53,"label":"emotion"}]},
       
       {"text": "I'm feeling worried about my health after experiencing some symptoms.", 
       "entities": [{"start":11 ,"end":19 ,"label":"emotion"},{"start": 25,"end": 68,"label":"reason" }]},
