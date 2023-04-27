@@ -1,7 +1,7 @@
 {
     "annotations": 
     [
-      {"text": "Remind me to call the doctor at 3pm", 
+      {"text": "Remind me to call the doctor at 3am", 
       "entities": [{"start": 13,"end": 28,"label": "reminder_text"},{"start": 32,"end": 35,"label": "time"}]},
       
       {"text": "What do I have on my calendar for tomorrow?", 
@@ -19,13 +19,13 @@
       {"text": "Move my meeting with Sarah to next Monday at 1pm", 
       "entities": [{"start": 8,"end": 26,"label": "event_text"},{"start": 30,"end": 41,"label": "new_date"},{"start": 45,"end": 48,"label": "new_time"}]},
       
-      {"text": "What's the ID of my meeting with John?", 
+      {"text": "What's the ID of my meeting with Josh?", 
       "entities": [{"start": 11,"end": 13,"label": "event_id"},{"start": 20,"end": 37,"label": "event_text"}]},
       
       {"text": "Add a new event for a team meeting next Wednesday at 3pm", 
       "entities": [{"start": 22,"end": 34,"label": "event_text"},{"start": 35,"end": 49,"label": "date"},{"start": 53,"end": 56,"label": "time"}]},
 
-      {"text": "Can you schedule a reminder to work on my AI assignment on April 24th at 9 am?", 
+      {"text": "Can you schedule a reminder to work on my AI assignment on April 24th at 9am?", 
       "entities": [{"start": 31,"end": 55,"label": "reminder_text"},{"start": 59,"end": 69,"label": "date"},{"start": 73,"end": 77,"label": "time"}]},
 
       {"text": "Set reminder to take my dog out for a walk tomorrow at 5pm", 
