@@ -245,7 +245,7 @@
       
       {"text": , "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
       
-      {"text": "Add a new event for a team meeting next Wednesday at 3pm", "entities": [{"start": 16,"end": 28,"label": "new_event"},{"start": 35,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]}          
-
+      {"text": "Add a new event for a team meeting next Wednesday at 3pm", "entities": [{"start": 16,"end": 28,"label": "new_event"},{"start": 35,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]}
     ]
-}
+}           
+  
