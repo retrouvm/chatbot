@@ -30,6 +30,34 @@ def preprocess_data(json_file):
     return train_data
 
 
+
+#function to train the NER model
+def train_ner_model(train_data, model_path):
+    nlp = spacy.load("en_core_web_sm")
+    ner = nlp.get_pipe("ner")
+
+    for _, annotations in train_data:
+        for ent in annotations.get("entities"):
+            ner.add_label(ent[2])
+
+    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
+    with nlp.disable_pipes(*other_pipes):
+        optimizer = nlp.begin_training()
+        for iteration in range(100):
+            random.shuffle(train_data)
+            losses = {}
+            for text, annotations in train_data:
+                example = Example.from_dict(nlp.make_doc(text), annotations)
+                nlp.update([example], drop=0.5, sgd=optimizer, losses=losses)
+
+    nlp.to_disk(model_path)
+# Preprocess the data
+train_data = preprocess_data("entities.json")
+
+# Train the NER model
+train_ner_model(train_data, "ner_model")
+
+
 lemmatizer = WordNetLemmatizer()
 
 intents = json.loads(open('intents.json').read())
