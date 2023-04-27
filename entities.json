@@ -178,7 +178,7 @@
       {"text": "Create an event for my friend's birthday party on July 14th at 7 pm.", 
       "entities": [{"start": 23,"end": 46,"label": "event_text"},{"start": 50,"end": 59,"label": "date"},{"start": 63,"end": 67,"label": "time"}]},
 
-      {"text": "I need to update the name of my meeting with Sarah to Sales Strategy", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "I need to update the name of my meeting with Sarah to Sales Strategy", "entities": [{"start": 32,"end": 50,"label": "reminder_text"},{"start": 54,"end": 68,"label": "new_reminder"}]},
 
       {"text": "Reschedule my reminder to water the plants for next Saturday at 9am", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
 
@@ -212,9 +212,9 @@
 
       {"text": "What's the event ID for the company-wide training session next month?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
 
-      {"text": "Can you delete my reminder with ID R2345?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Can you delete my reminder with ID R2345?", "entities": [{"start": 32,"end": 40,"label": "reminder_id"}]},
 
-      {"text": "I want to change the name of event E8765 to Annual General Meeting", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "I want to change the name of event E8765 to Annual General Meeting", "entities": [{"start": 35,"end": 40,"label": "event_id"},{"start": 44,"end": 66,"label": "new_event"}]},
 
       {"text": "What's the event ID for my meeting with John next Wednesday?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
 
