@@ -1,21 +1,182 @@
 {
     "annotations": 
     [
-      {"text": "Remind me to call the doctor at 3pm", "entities": [{"start": 13,"end": 28,"label": "reminder_text"},{"start": 32,"end": 35,"label": "time"}]},
+      {"text": "Remind me to call the doctor at 3pm", 
+      "entities": [{"start": 13,"end": 28,"label": "reminder_text"},{"start": 32,"end": 35,"label": "time"}]},
       
-      {"text": "What do I have on my calendar for tomorrow?", "entities": [{"start": 28,"end": 36,"label": "date"}]},
+      {"text": "What do I have on my calendar for tomorrow?", 
+      "entities": [{"start": 34,"end": 42,"label": "date"}]},
       
-      {"text": "Change my meeting with John to next Wednesday at 4pm", "entities": [{"start": 23,"end": 27,"label": "event_text"},{"start": 33,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]},
+      {"text": "Change my meeting with John to next Wednesday at 4pm", 
+      "entities": [{"start": 10,"end": 27,"label": "event_text"},{"start": 31,"end": 45,"label": "new_date"},{"start": 49,"end": 52,"label": "new_time"}]},
       
-      {"text": "Create a new reminder to water the plants every Friday at 10am", "entities": [{"start": 20,"end": 33,"label": "reminder_text"},{"start": 38,"end": 45,"label": "date"},{"start": 49,"end": 53,"label": "time"},{"start": 0,"end": 6,"label": "new_reminder"}]},
+      {"text": "Create a new reminder to water the plants every Friday at 10am", 
+      "entities": [{"start": 25,"end": 41,"label": "reminder_text"},{"start": 42,"end": 54,"label": "date"},{"start": 58,"end": 62,"label": "time"}]},
       
-      {"text": "Delete my reminder for the dentist appointment", "entities": [{"start": 21,"end": 40,"label": "reminder_text"},{"start": 0,"end": 11,"label": "new_reminder"}]},
+      {"text": "Delete my reminder for the dentist appointment", 
+      "entities": [{"start": 27,"end": 46,"label": "reminder_text"}]},
       
-      {"text": "Move my meeting with Sarah to next Monday at 1pm", "entities": [{"start": 14,"end": 19,"label": "event_text"},{"start": 28,"end": 42,"label": "new_date"},{"start": 46,"end": 49,"label": "new_time"}]},
+      {"text": "Move my meeting with Sarah to next Monday at 1pm", 
+      "entities": [{"start": 8,"end": 26,"label": "event_text"},{"start": 30,"end": 41,"label": "new_date"},{"start": 45,"end": 48,"label": "new_time"}]},
       
-      {"text": "What's the ID of my meeting with John?", "entities": [{"start": 24,"end": 30,"label": "event_id"},{"start": 14,"end": 18,"label": "event_text"}]},
+      {"text": "What's the ID of my meeting with John?", 
+      "entities": [{"start": 11,"end": 13,"label": "event_id"},{"start": 20,"end": 37,"label": "event_text"}]},
       
-      {"text": "Add a new event for a team meeting next Wednesday at 3pm", "entities": [{"start": 16,"end": 28,"label": "new_event"},{"start": 35,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]}
+      {"text": "Add a new event for a team meeting next Wednesday at 3pm", 
+      "entities": [{"start": 22,"end": 34,"label": "event_text"},{"start": 35,"end": 49,"label": "date"},{"start": 53,"end": 56,"label": "time"}]},
+
+      {"text": "Can you schedule a reminder to work on my AI assignment on April 24th at 9 am?", 
+      "entities": [{"start": 31,"end": 55,"label": "reminder_text"},{"start": 59,"end": 69,"label": "date"},{"start": 73,"end": 77,"label": "time"}]},
+
+      {"text": "Set reminder to take my dog out for a walk tomorrow at 5pm", 
+      "entities": [{"start": 16,"end": 42,"label": "reminder_text"},{"start": 43,"end": 51,"label": "date"},{"start": 55,"end": 58,"label": "time"}]},
+
+      {"text": "Schedule reminder for May 10th at 3pm to go to my team meeting", 
+      "entities": [{"start": 22,"end": 30,"label": "date"},{"start": 34,"end": 37,"label": "time"},{"start": 41,"end": 62,"label": "reminder_text"}]},
+
+      {"text": "Delete reminder to take my dog out for a walk", 
+      "entities": [{"start": 19,"end": 45,"label": "reminder_text"}]},
+
+      {"text": "Update the reminder for working on AI assignment to April 25th at 10am", 
+      "entities": [{"start": 24,"end": 48,"label": "reminder_text"},{"start": 52,"end": 62,"label": "new_date"},{"start": 66,"end": 70,"label": "new_time"}]},
+
+      {"text": "Set reminder to do laundry today at 4pm", 
+      "entities": [{"start": 16,"end": 26,"label": "reminder_text"},{"start": 27,"end": 32,"label": "date"},{"start": 36,"end": 39,"label": "time"}]},
+
+      {"text": "Set up meeting with my Professor on April 27th at 2pm", 
+      "entities": [{"start": 7,"end": 32,"label": "reminder_text"},{"start": 36,"end": 46,"label": "date"},{"start": 50,"end": 53,"label": "time"}]},
+
+      {"text": "Update reminder to do laundry to tomorrow at 9am", 
+      "entities": [{"start": 19,"end": 29,"label": "reminder_text"},{"start": 33,"end": 41,"label": "new_date"},{"start": 45,"end": 48,"label": "new_time"}]},
+
+      {"text": "Create reminder for doctor's appointment on May 30th at 11 am", 
+      "entities": [{"start": 20,"end": 40,"label": "reminder_text"},{"start": 44,"end": 52,"label": "date"},{"start": 56,"end": 61,"label": "time"}]},
+
+      {"text": "Can you delete the reminder to meet with my Professor?", 
+      "entities": [{"start": 31,"end": 53,"label": "reminder_text"}]},
+
+      {"text": "Remind me to pick up nephew tomorrow at 4pm", 
+      "entities": [{"start": 13,"end": 27,"label": "reminder_text"},{"start": 28,"end": 36,"label": "date"},{"start": 40,"end": 43,"label": "time"}]},
+
+      {"text": "Set up meeting with Diana for May 2nd at 10pm", 
+      "entities": [{"start": 7,"end": 25,"label": "reminder_text"},{"start": 30,"end": 37,"label": "date"},{"start": 41,"end": 45,"label": "time"}]},
+
+      {"text": "Update doctor's appointment to June 2nd at 2pm", 
+      "entities": [{"start": 7,"end": 2,"label": "reminder_text"},{"start": 31,"end": 39,"label": "new_date"},{"start": 43,"end": 46,"label": "new_time"}]},
+
+      {"text": "Can you remind me to pick up my amazon package on April 23rd at 10am", 
+      "entities": [{"start": 21,"end": 46,"label": "reminder_text"},{"start": 50,"end": 60,"label": "date"},{"start": 64,"end": 68,"label": "time"}]},
+
+      {"text": "Create reminder to meet with John at 1pm on April 29th", 
+      "entities": [{"start": 19,"end": 33,"label": "reminder_text"},{"start": 37,"end": 40,"label": "time"},{"start": 44,"end": 54,"label": "date"}]},
+
+      {"text": "Reschedule my meeting with Diana to May 4th at 11pm", 
+      "entities": [{"start": 14,"end": 32,"label": "reminder_text"},{"start": 36,"end": 43,"label": "date"},{"start": 47,"end": 51,"label": "time"}]},
+
+      {"text": "Delete reminder to meet with my professor", 
+      "entities": [{"start": 19,"end": 41,"label": "reminder_text"}]},
+
+      {"text": "Set up reminder for nail appointment on April 28th at 9am", 
+      "entities": [{"start": 20,"end": 36,"label": "reminder_text"},{"start": 40,"end": 50,"label": "date"},{"start": 54,"end": 57,"label": "time"}]},
+
+      {"text": "Update doctor's appointment to June 2nd at 1pm", 
+      "entities": [{"start": 7,"end": 27,"label": "reminder_text"},{"start": 31,"end": 39,"label": "new_date"},{"start": 43,"end": 46,"label": "new_time"}]},
+
+      {"text": "Delete reminder to meet with John.", 
+      "entities": [{"start": 19,"end": 33,"label": "reminder_text"}]},
+
+      {"text": "Can you set a reminder for my dentist appointment on March 30th at 3 pm?", 
+      "entities": [{"start": 30,"end": 49,"label": "reminder_text"},{"start": 53,"end": 63,"label": "date"},{"start": 67,"end": 71,"label": "time"}]},
+
+      {"text": "Remind me to buy groceries tomorrow at 5 pm.", 
+      "entities": [{"start": 13,"end": 26,"label": "reminder_text"},{"start": 27,"end": 35,"label": "date"},{"start": 40,"end": 44,"label": "time"}]},
+
+      {"text": "I need a reminder to call my mom on April 5th at 2 pm.", 
+      "entities": [{"start": 21,"end": 32,"label": "reminder_text"},{"start": 36,"end": 45,"label": "date"},{"start": 49,"end": 53,"label": "time"}]},
+
+      {"text": "Create a reminder for my meeting with John on May 10th at 10 am.", 
+      "entities": [{"start": 25,"end": 42,"label": "reminder_text"},{"start": 46,"end": 54,"label": "date"},{"start": 58,"end": 63,"label": "time"}]},
+
+      {"text": "Set a reminder for my flight on June 1st at 4 pm.", 
+      "entities": [{"start": 22,"end": 28,"label": "reminder_text"},{"start": 32,"end": 40,"label": "date"},{"start": 44,"end": 48,"label": "time"}]},
+
+      {"text": "Delete the reminder for my dentist appointment on March 30th at 3 pm.", 
+      "entities": [{"start": 27,"end": 46,"label": "reminder_text"},{"start": 50,"end": 60,"label": "date"},{"start": 64,"end": 68,"label": "time"}]},
+
+      {"text": "Remove the reminder for my meeting with John on May 10th at 10 am.", 
+      "entities": [{"start": 27,"end": 44,"label": "reminder_text"},{"start": 48,"end": 56,"label": "date"},{"start": 66,"end": 65,"label": "time"}]},
+
+      {"text": "Cancel my reminder to buy groceries tomorrow at 5 pm.", 
+      "entities": [{"start": 22,"end": 35,"label": "reminder_text"},{"start": 36,"end": 44,"label": "date"},{"start": 48,"end": 52,"label": "time"}]},
+
+      {"text": "List all my reminders for the next week.", 
+      "entities": [{"start": 30,"end": 39,"label": "date"}]},
+
+      {"text": "Show me my reminders for today.", 
+      "entities": [{"start": 25,"end": 30,"label": "date"}]},
+
+      {"text": "Create an event for my friend's birthday party on July 14th at 7 pm.", 
+      "entities": [{"start": 23,"end": 46,"label": "event_text"},{"start": 50,"end": 59,"label": "date"},{"start": 63,"end": 67,"label": "time"}]},
+
+      {"text": "Save an event for the conference on August 20th at 9 am.", 
+      "entities": [{"start": 22,"end": 32,"label": "event_text"},{"start": 36,"end": 47,"label": "date"},{"start": 51,"end": 55,"label": "time"}]},
+
+      {"text": "Add an event for my anniversary dinner on September 15th at 8 pm.", 
+      "entities": [{"start": 20,"end": 38,"label": "event_text"},{"start": 42,"end": 56,"label": "date"},{"start": 60,"end": 64,"label": "time"}]},
+
+      {"text": "Delete the event for my friend's birthday party on July 14th at 7 pm.", 
+      "entities": [{"start": 24,"end": 47,"label": "event_text"},{"start": 51,"end": 60,"label": "date"},{"start": 64,"end": 68,"label": "time"}]},
+
+      {"text": "Remove the event for the conference on August 20th at 9 am.", 
+      "entities": [{"start": 25,"end": 35,"label": "event_text"},{"start": 39,"end": 50,"label": "date"},{"start": 54,"end": 58,"label": "time"}]},
+
+      {"text": "Cancel the event for my anniversary dinner on September 15th at 8 pm.", 
+      "entities": [{"start": 24,"end": 42,"label": "event_text"},{"start": 46,"end": 60,"label": "date"},{"start": 64,"end": 68,"label": "time"}]},
+
+      {"text": "List all my events for May.", 
+      "entities": [{"start": 23,"end": 26,"label": "date"}]},
+
+      {"text": "Show me my events for next weekend.", 
+      "entities": [{"start": 22,"end": 34,"label": "date"}]},
+
+      {"text": "Update the reminder for my dentist appointment to March 31st at 4 pm.", 
+      "entities": [{"start": 27,"end": 46,"label": "event_text"},{"start": 50,"end": 60,"label": "new_date"},{"start": 64,"end": 68,"label": "new_time"}]},
+
+      {"text": "Change the event for my friend's birthday party to July 15th at 6 pm.", 
+      "entities": [{"start": 24,"end": 47,"label": "event_text"},{"start": 51,"end": 60,"label": "new_date"},{"start": 64,"end": 68,"label": "new_time"}]},
+
+      {"text": "Can you set a reminder for my dentist appointment on March 30th at 3 pm?", 
+      "entities": [{"start": 30,"end": 49,"label": "reminder_text"},{"start": 53,"end": 63,"label": "date"},{"start": 67,"end": 71,"label": "time"}]},
+
+      {"text": "Remind me to buy groceries tomorrow at 5 pm.", 
+      "entities": [{"start": 13,"end": 26,"label": "reminder_text"},{"start": 27,"end": 35,"label": "date"},{"start": 39,"end": 43,"label": "time"}]},
+
+      {"text": "I need a reminder to call my mom on April 5th at 2 pm.", 
+      "entities": [{"start": 21,"end": 32,"label": "reminder_text"},{"start": 36,"end": 45,"label": "date"},{"start": 49,"end": 53,"label": "time"}]},
+
+      {"text": "Create a reminder for my meeting with John on May 10th at 10 am.", 
+      "entities": [{"start": 24,"end": 43,"label": "reminder_text"},{"start": 47,"end": 55,"label": "date"},{"start": 59,"end": 64,"label": "time"}]},
+
+      {"text": "Set a reminder for my flight on June 1st at 4 pm.", 
+      "entities": [{"start": 22,"end": 28,"label": "reminder_text"},{"start": 32,"end": 40,"label": "date"},{"start": 44,"end": 48,"label": "time"}]},
+
+      {"text": "Delete the reminder for my dentist appointment on March 30th at 3 pm.", 
+      "entities": [{"start": 27,"end": 46,"label": "reminder_text"},{"start": 50,"end": 60,"label": "date"},{"start": 64,"end": 68,"label": "time"}]},
+
+      {"text": "Remove the reminder for my meeting with John on May 10th at 10 am.", 
+      "entities": [{"start": 27,"end": 44,"label": "reminder_text"},{"start": 48,"end": 56,"label": "date"},{"start": 66,"end": 65,"label": "time"}]},
+
+      {"text": "Cancel my reminder to buy groceries tomorrow at 5 pm.", 
+      "entities": [{"start": 22,"end": 35,"label": "reminder_text"},{"start": 36,"end": 44,"label": "date"},{"start": 48,"end": 52,"label": "time"}]},
+
+      {"text": "List all my reminders for the next week.", 
+      "entities": [{"start": 30,"end": 39,"label": "date"}]},
+
+      {"text": "Show me my reminders for today.", 
+      "entities": [{"start": 25,"end": 30,"label": "date"}]},
+
+      {"text": "Create an event for my friend's birthday party on July 14th at 7 pm.", 
+      "entities": [{"start": 23,"end": 46,"label": "event_text"},{"start": 50,"end": 59,"label": "date"},{"start": 63,"end": 67,"label": "time"}]}
+
     ]
 }           
-  
