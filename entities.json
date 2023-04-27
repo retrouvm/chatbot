@@ -259,47 +259,68 @@
       
       {"text": "I'm feeling curious about the new technology that my friend was talking about.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
       
-      {"text": "Add a new event for a team meeting next Wednesday at 3pm", "entities": [{"start": 16,"end": 28,"label": "new_event"},{"start": 35,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]},
+      {"text": "Add a new event for a team meeting next Wednesday at 3pm", 
+      "entities": [{"start": 16,"end": 28,"label": "new_event"},{"start": 35,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]},
 
-      {"text": "Set a reminder to go to class on March 24th at 2pm", "entities": [{"start": 18, "end": 29, "label": "reminder_text"}, {"start": 33, "end": 43, "label": "date"}, {"start": 47, "end": 50, "label": "time"}]},
+      {"text": "Set a reminder to go to class on March 24th at 2pm", 
+      "entities": [{"start": 18, "end": 29, "label": "reminder_text"}, {"start": 33, "end": 43, "label": "date"}, {"start": 47, "end": 50, "label": "time"}]},
 
-      {"text": "Remind me to visit my family on April 9th at 5:30pm", "entities": [{"start": 13, "end": 28, "label": "reminder_text"}, {"start": 32, "end": 41, "label": "date"}, {"start": 45, "end": 51, "label": "time"}]}, 
+      {"text": "Remind me to visit my family on April 9th at 5:30pm", 
+      "entities": [{"start": 13, "end": 28, "label": "reminder_text"}, {"start": 32, "end": 41, "label": "date"}, {"start": 45, "end": 51, "label": "time"}]}, 
 
-      {"text": "Can you remind me to take my medicine at 7:00am on May 30th", "entities": [{"start":21, "end":37, "label": "reminder_text"}, {"start": 51, "end": 59, "label": "date"}, {"start": 41, "end": 47, "label": "time"}]},
+      {"text": "Can you remind me to take my medicine at 7:00am on May 30th", 
+      "entities": [{"start":21, "end":37, "label": "reminder_text"}, {"start": 51, "end": 59, "label": "date"}, {"start": 41, "end": 47, "label": "time"}]},
 
-      {"text": "Create a reminder to pick up Bob on July 2nd at 10am", "entities": [{"start": 21, "end": 32, "label": "reminder_text"}, {"start": 36, "end": 44, "label":"date"}, {"start":48, "end":52, "label":"time"}]},
+      {"text": "Create a reminder to pick up Bob on July 2nd at 10am", 
+      "entities": [{"start": 21, "end": 32, "label": "reminder_text"}, {"start": 36, "end": 44, "label":"date"}, {"start":48, "end":52, "label":"time"}]},
 
-      {"text": "Schedule a dentist appointment for May 7th at 10am", "entities": [{"start":11, "end":30, "label": "reminder_text"}, {"start": 35, "end": 42, "label": "date"}, {"start":46, "end":50, "label": "time"}]},
+      {"text": "Schedule a dentist appointment for May 7th at 10am", 
+      "entities": [{"start":11, "end":30, "label": "reminder_text"}, {"start": 35, "end": 42, "label": "date"}, {"start":46, "end":50, "label": "time"}]},
 
-      {"text": "Remember to call the bank on March 18th at 3pm", "entities": [{"start":12, "end":25, "label": "reminder_text"}, {"start":29, "end":39, "label":"date"}, {"start": 43, "end":46, "label": "time"}]},
+      {"text": "Remember to call the bank on March 18th at 3pm", 
+      "entities": [{"start":12, "end":25, "label": "reminder_text"}, {"start":29, "end":39, "label":"date"}, {"start": 43, "end":46, "label": "time"}]},
 
-      {"text": "Set a reminder to water the plants on June 5th at 8am", "entities": [{"start": 18, "end": 34, "label": "reminder_text"}, {"start":38, "end":46, "label":"date"}, {"start": 50, "end": 53, "label": "time"}]},
+      {"text": "Set a reminder to water the plants on June 5th at 8am", 
+      "entities": [{"start": 18, "end": 34, "label": "reminder_text"}, {"start":38, "end":46, "label":"date"}, {"start": 50, "end": 53, "label": "time"}]},
 
-      {"text": "Don't forget to pick up the dry cleaning on June 5th at 5pm", "entities": [{"start":16, "end": 40, "label": "reminder_text"}, {"start":44, "end": 52, "label":"date"}, {"start": 56, "end": 59, "label":"time"}]},
+      {"text": "Don't forget to pick up the dry cleaning on June 5th at 5pm", 
+      "entities": [{"start":16, "end": 40, "label": "reminder_text"}, {"start":44, "end": 52, "label":"date"}, {"start": 56, "end": 59, "label":"time"}]},
 
-      {"text": "Schedule a meeting with John for November 1st at 2pm", "entities": [{"start": 9, "end": 28, "label": "reminder_text"}, {"start": 33, "end": 45, "label": "date"}, {"start":49, "end": 52, "label": "time"}]},
+      {"text": "Schedule a meeting with John for November 1st at 2pm", 
+      "entities": [{"start": 9, "end": 28, "label": "reminder_text"}, {"start": 33, "end": 45, "label": "date"}, {"start":49, "end": 52, "label": "time"}]},
 
-      {"text": "Remember to take out the trash on September 4th at 6pm", "entities": [{"start":12, "end": 30, "label": "reminder_text"}, {"start":34, "end":47, "label":"date"}, {"start":51, "end":54, "label":"time"}]},
+      {"text": "Remember to take out the trash on September 4th at 6pm", 
+      "entities": [{"start":12, "end": 30, "label": "reminder_text"}, {"start":34, "end":47, "label":"date"}, {"start":51, "end":54, "label":"time"}]},
 
-      {"text": "Set a reminder to pay the rent on the 1st of June at 9am", "entities": [{"start":18, "end": 30, "label":"reminder_text"}, {"start":34, "end":49, "label":"date"}, {"start": 53, "end":56, "label":"time"}]},
+      {"text": "Set a reminder to pay the rent on the 1st of June at 9am", 
+      "entities": [{"start":18, "end": 30, "label":"reminder_text"}, {"start":34, "end":49, "label":"date"}, {"start": 53, "end":56, "label":"time"}]},
 
-      {"text":"Don't forget to buy a birthday gift for Sarah on August 10th at 11am", "entities": [{"start":16, "end":45, "label":"reminder_text"}, {"start": 49, "end":60, "label":"date"}, {"start":64, "end":68, "label":"time"}]},
+      {"text":"Don't forget to buy a birthday gift for Sarah on August 10th at 11am", 
+      "entities": [{"start":16, "end":45, "label":"reminder_text"}, {"start": 49, "end":60, "label":"date"}, {"start":64, "end":68, "label":"time"}]},
 
-      {"text":"Schedule a doctor's appointment for October 15th at 3pm", "entities": [{"start":9, "end":31, "label": "reminder_text"}, {"start": 36, "end" :48, "label":"date"}, {"start": 52, "end": 55, "label": "time"}]},
+      {"text":"Schedule a doctor's appointment for October 15th at 3pm", 
+      "entities": [{"start":9, "end":31, "label": "reminder_text"}, {"start": 36, "end" :48, "label":"date"}, {"start": 52, "end": 55, "label": "time"}]},
       
-      {"text": "Remember to call the insurance company on February 27th at 10am", "entities": [{ "start": 0, "end": 37, "label":"reminder_text"}, {"start":41, "end": 53, "label": "date"}, {"start": 57, "end": 61, "label": "time"}]},
+      {"text": "Remember to call the insurance company on February 27th at 10am", 
+      "entities": [{ "start": 0, "end": 37, "label":"reminder_text"}, {"start":41, "end": 53, "label": "date"}, {"start": 57, "end": 61, "label": "time"}]},
 
-      {"text": "Set a reminder to renew my passport on July 12th at 4pm", "entities": [{"start":18, "end": 35, "label": "reminder_text"}, {"start":39, "end": 48, "label":"date"}, {"start":52, "end":55, "label":"time"}]},
+      {"text": "Set a reminder to renew my passport on July 12th at 4pm", 
+      "entities": [{"start":18, "end": 35, "label": "reminder_text"}, {"start":39, "end": 48, "label":"date"}, {"start":52, "end":55, "label":"time"}]},
 
-      {"text": "Don't forget to buy milk on July 4th at 11am", "entities": [{"start":16, "end": 24, "label": "reminder_text"}, {"start":28, "end": 36, "label": "date"}, {"start": 40, "end": 44, "label": "time"}]},
+      {"text": "Don't forget to buy milk on July 4th at 11am", 
+      "entities": [{"start":16, "end": 24, "label": "reminder_text"}, {"start":28, "end": 36, "label": "date"}, {"start": 40, "end": 44, "label": "time"}]},
 
-      {"text": "Schedule a hair appointment for April 30th at 2pm", "entities": [{"start":9, "end":27, "label": "reminder_text"}, {"start":32, "end":36, "label": "date"}, {"start": 40, "end": 43, "label": "time"}]},
+      {"text": "Schedule a hair appointment for April 30th at 2pm", 
+      "entities": [{"start":9, "end":27, "label": "reminder_text"}, {"start":32, "end":36, "label": "date"}, {"start": 40, "end": 43, "label": "time"}]},
 
-      {"text": "Remember to return the library books on March 28th at 12pm", "entities": [{"start":12, "end":36, "label": "reminder_text"}, {"start":30, "end":40, "label":"date"}, {"start":44, "end":48, "label": "time"}]},
+      {"text": "Remember to return the library books on March 28th at 12pm", 
+      "entities": [{"start":12, "end":36, "label": "reminder_text"}, {"start":30, "end":40, "label":"date"}, {"start":44, "end":48, "label": "time"}]},
 
-      {"text": "Remember me to walk Murray at 4am on December 31st", "entities": [{"start": 15, "end": 26, "label":"reminder_text"}, {"start": 37, "end": 50, "label": "date"}, {"start": 30, "end": 33, "label": "time"}]},
+      {"text": "Remember me to walk Murray at 4am on December 31st", 
+      "entities": [{"start": 15, "end": 26, "label":"reminder_text"}, {"start": 37, "end": 50, "label": "date"}, {"start": 30, "end": 33, "label": "time"}]},
 
-      {"text": "Remember to return the library books on March 28th at 12pm", "entities": [{"start":12, "end":36, "label": "reminder_text"}, {"start":30, "end": 40, "label":"date"}, {"start": 44, "end": 48, "label": "time"}]}
+      {"text": "Remember to return the library books on March 28th at 12pm", 
+      "entities": [{"start":12, "end":36, "label": "reminder_text"}, {"start":30, "end": 40, "label":"date"}, {"start": 44, "end": 48, "label": "time"}]}
     ] 
 }           
   
