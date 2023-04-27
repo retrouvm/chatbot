@@ -211,10 +211,14 @@
           {"text": "Change a reminder", "entities": []},
           {"text": "Edit a reminder", "entities": []},
           {"text": "Modify a reminder", "entities": []},
+          {"text": "I want to change an existing reminder", "entities": []},
           {"text": "Update my reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
           {"text": "Change my reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
           {"text": "Modify my reminder for {reminder_text} to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
-          {"text": "Can you update my reminder for {reminder_text}?", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]}
+          {"text": "Can you update my reminder for {reminder_text}?", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "I want to update the title of my reminder", "entities": []},
+          {"text": "I need to change the date of my reminder to {new_date}", "entities": ["new_date"]},
+          {"text": "I want to change the time of my reminder to {new_time}", "entities": ["new_time"]}
         ],
         "responses":
         [
@@ -365,31 +369,44 @@
             {"text": "What's your mood like?", "entities": []},
             {"text": "How is your day going?", "entities": []},
             {"text": "Are you feeling well today?", "entities": []},
-            {"text": "How do you feel about {topic}?", "entities": [{"type": "topic", "value": "topic"}]},
             {"text": "I'm feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
             {"text": "I'm {emotion} today", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "{person} is making me {emotion}", "entities": [{"type": "person", "value": "person"}, {"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm feeling {emotion} because of {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]}
+            {"text": "I'm feeling {emotion} because of {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "I'm feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm feeling {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "Feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "Feeling {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "I feel {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I feel {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "{emotion} is what I'm feeling", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm experiencing {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm experiencing {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "I'm in a {emotion} mood", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm in a {emotion} mood because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "{emotion} is how I'm feeling right now", "entities": [{"type": "emotion", "value": "emotion"}]}
         ],
         "responses": 
         [
             {"text": "I'm just a machine, so I don't have feelings. How about you? How are you feeling today?", "entities": []},
-            {"text": "I'm sorry to hear that. What's been bothering you?", "entities": []},
-            {"text": "That sounds tough. Do you want to talk about it?", "entities": []},
-            {"text": "It's good to hear that you're feeling {emotion}. What's making you feel that way?", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm glad to hear that you're feeling {emotion}. Is there anything you'd like to talk about?", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm sorry to hear that {person} is making you feel {emotion}. Have you talked to them about it?", "entities": [{"type": "person", "value": "person"}, {"type": "emotion", "value": "emotion"}]},
-            {"text": "I understand how {reason} could make you feel {emotion}. Do you want to talk about it?", "entities": [{"type": "reason", "value": "reason"}, {"type": "emotion", "value": "emotion"}]}
+            {"text": "I'm sorry to hear that.", "entities": []},
+            {"text": "That sounds tough.", "entities": []},
+            {"text": "It's good to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm glad to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm sorry to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "It's completely normal to feel {emotion} sometimes.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I understand how you feel.", "entities": []},
+            {"text": "I'm glad to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "It sounds like you've been going through a tough time.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "It's okay to not be okay sometimes.", "entities": []},
+            {"text": "I'm sorry to hear that you're feeling {emotion} because of {reason}.", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "It's understandable to feel {emotion} because of {reason}.", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
+            {"text": "I understand how {reason} could make you feel {emotion}.", "entities": [{"type": "reason", "value": "reason"}, {"type": "emotion", "value": "emotion"}]}
         ]
     },
     {
       "tag": "small_talk",
       "patterns": 
       [
-          {"text": "Hi", "entities": []},
-          {"text": "Hello", "entities": []},
-          {"text": "How are you?", "entities": []},
-          {"text": "What's up?", "entities": []},
           {"text": "How's your day going?", "entities": []},
           {"text": "What do you like to do for fun?", "entities": []},
           {"text": "Do you have any hobbies?", "entities": []},
@@ -406,7 +423,6 @@
       ],
       "responses": 
       [
-          {"text": "Hello! How can I assist you today?", "entities": []},
           {"text": "I'm doing well, thanks! How about you?", "entities": []},
           {"text": "Not much, just chatting with you. How about you?", "entities": []},
           {"text": "My day is going well, thanks for asking. How about yours?", "entities": []},
@@ -418,7 +434,6 @@
           {"text": "I don't have a favorite color, since I don't see like humans do. But I can still help you with anything you need!", "entities": []},
           {"text": "I don't have any pets, since I'm a chatbot. But I'm always here to assist you!", "entities": []},
           {"text": "I love all kinds of animals! But since I'm a chatbot, I don't actually interact with them like humans do.", "entities": []},
-          {"text": "Hello! How can I help you today?", "entities": []},
           {"text": "I'm doing well, thanks for asking! How about you?", "entities": []},
           {"text": "Not much, just assisting users like you. How can I help you today?", "entities": []},
           {"text": "It's going great, thanks for asking! How can I assist you today?", "entities": []},
