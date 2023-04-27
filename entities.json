@@ -181,37 +181,53 @@
       {"text": "I need to update the name of my meeting with Sarah to Sales Strategy", 
       "entities": [{"start": 32,"end": 50,"label": "reminder_text"},{"start": 54,"end": 68,"label": "new_reminder"}]},
 
-      {"text": "Reschedule my reminder to water the plants for next Saturday at 9am", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Reschedule my reminder to water the plants for next Saturday at 9am", 
+      "entities": [{"start":26,"end":42,"label":"reminder_text"},{"start":47,"end":60,"label":"date"},{"start":64,"end":67,"label":"time"}]},
 
-      {"text": "Can you move my dentist appointment to next week", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Can you move my dentist appointment to next week", 
+      "entities": [{"start":16,"end":35,"label":"reminder_text"},{"start":39,"end":48,"label":"date"}]},
 
-      {"text": "Update the date of my team meeting to next Thursday at 3pm", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Update the date of my team meeting to next Thursday at 3pm", 
+      "entities": [{"start":22,"end":34,"label":"reminder_text"},{"start":38,"end":51,"label":"date"},{"start":55,"end":58,"label":"time"}]},
 
-      {"text": "Can you change the time of my reminder to take my medication to 10am?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Can you change the time of my reminder to take my medication to 10am?", 
+      "entities": [{"start":42,"end":60,"label":"reminder_text"},{"start":64,"end":68,"label":"time"}]},
 
-      {"text": "I want to change the name of my reminder for the doctor's appointment.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "I want to change the name of my reminder for the doctor's appointment.", 
+      "entities": [{"start":49,"end":69,"label":"reminder_text"}]},
 
-      {"text": "Move my appointment with Dr. Smith to next Tuesday at 2pm.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Move my appointment with Dr. Smith to next Tuesday at 2pm.", 
+      "entities": [{"start":8,"end":34,"label":"reminder_text"},{"start":38,"end":50,"label":"date"},{"start":54,"end":57,"label":"time"}]},
 
-      {"text": "Update the time of my team meeting to 11am.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Update the time of my team meeting to 11am.", 
+      "entities": [{"start":22,"end":34,"label":"reminder_text"},{"start":38,"end":42,"label":"date"}]},
 
-      {"text": "Change the name of my event with Mary to Monthly Check-In.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Change the name of my event with Mary to Monthly Check-In.", 
+      "entities": [{"start":22,"end":37,"label":"event_text"},{"start":41,"end":57,"label":"new_event"}]},
 
-      {"text": "Create a new event for the product launch on May 5th.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Create a new event for the product launch on May 5th.", 
+      "entities": [{"start":27,"end":41,"label":"event_text"},{"start":45,"end":52,"label":"date"}]},
 
-      {"text": "Set up a company-wide training session for next month.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Set up a company-wide training session for next month.", 
+      "entities": [{"start":9,"end":38,"label":"event_text"},{"start":43,"end":53,"label":"date"}]},
 
-      {"text": "Update the time of the conference call to 1pm.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Update the time of the conference call to 1pm.", 
+      "entities": [{"start":23,"end":38,"label":"event_text"},{"start":42,"end":45,"label":"new_time"}]},
 
-      {"text": "Create a new event for the client meeting on June 10th.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Create a new event for the client meeting on June 10th.", 
+      "entities": [{"start":27,"end":41,"label":"event_text"},{"start":45,"end":54,"label":"date"}]},
 
-      {"text": "Can you remind me of the details for event E1234?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Can you remind me of the details for event E1234?", 
+      "entities": [{"start":43,"end":48,"label":"event_id"}]},
 
-      {"text": "I need to update the time of event E5678 to 3pm.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "I need to update the time of event E5678 to 3pm.", 
+      "entities": [{"start":35,"end":40,"label":"event_id"},{"start":44,"end":47,"label":"new_time"}]},
 
-      {"text": "Can you move my appointment with Dr. Smith to next Tuesday at 2pm? The event ID is E4321.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "Can you move my appointment with Dr. Smith to next Tuesday at 2pm? The event ID is E4321.", 
+      "entities": [{"start":16,"end":42,"label":"reminder_text"},{"start":46,"end":58,"label":"new_date"},{"start":62,"end":65,"label":"new_time"},{"start":83,"end":88,"label":"event_id"}]},
 
-      {"text": "What's the event ID for the company-wide training session next month?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      {"text": "What's the event ID for the company-wide training session next month?", 
+      "entities": [{"start":28,"end":57,"label":"event_text"},{"start":58,"end":68,"label":"date"}]},
 
       {"text": "Can you delete my reminder with ID R2345?", 
       "entities": [{"start": 32,"end": 40,"label": "reminder_id"}]},
