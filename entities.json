@@ -243,8 +243,6 @@
       
       {"text": "I'm feeling curious about the new technology that my friend was talking about.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
       
-      {"text": , "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
-      
       {"text": "Add a new event for a team meeting next Wednesday at 3pm", "entities": [{"start": 16,"end": 28,"label": "new_event"},{"start": 35,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]},
 
       {"text": "Set a reminder to go to class on March 24th at 2pm", "entities": [{"start": 18, "end": 29, "label": "reminder_text"}, {"start": 33, "end": 43, "label": "date"}, {"start": 47, "end": 50, "label": "time"}]},

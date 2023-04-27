@@ -33,9 +33,10 @@ def preprocess_data(json_file):
     return train_data
 
 #function to train the NER model
-def train_ner_model(train_data, model_path):
-    nlp = spacy.load("en_core_web_sm")
-    ner = nlp.get_pipe("ner")
+def train_ner_model(train_data, model_path="remindme.h5"):
+    nlp = spacy.blank("en")
+    ner = nlp.create_pipe("ner")
+    nlp.add_pipe(ner, last=True)
 
     for _, annotations in train_data:
         for ent in annotations.get("entities"):
@@ -57,7 +58,7 @@ def train_ner_model(train_data, model_path):
 train_data = preprocess_data("entities.json")
 
 # Train the NER model
-train_ner_model(train_data, "ner_model")
+train_ner_model(train_data, model_path="remindme.h5")
 
 
 
@@ -104,34 +105,58 @@ def preprocess_intents(intents_file):
                     print(reminder_text)
 
 
-words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
-words = sorted(set(words))
+    words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
+    words = sorted(set(words))
 
-classes = sorted(set(classes))
+    classes = sorted(set(classes))
 
-pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
+    pickle.dump(words, open('words.pkl', 'wb'))
+    pickle.dump(classes, open('classes.pkl', 'wb'))
 
-training = []
-outputEmpty = [0] * len(classes)
+    training = []
+    outputEmpty = [0] * len(classes)
 
-for document in documents:
-    bag = []
-    wordPatterns = document[0]
-    wordPatterns = [lemmatizer.lemmatize(word.lower()) for word in wordPatterns]
-    for word in words:
-        bag.append(1) if word in wordPatterns else bag.append(0)
+    for document in documents:
+        bag = []
+        wordPatterns = document[0]
+        wordPatterns = [lemmatizer.lemmatize(word.lower()) for word in wordPatterns]
+        for word in words:
+            bag.append(1) if word in wordPatterns else bag.append(0)
 
-    outputRow = list(outputEmpty)
-    outputRow[classes.index(document[1])] = 1
-    training.append(bag + outputRow)
+        outputRow = list(outputEmpty)
+        outputRow[classes.index(document[1])] = 1
+        training.append(bag + outputRow)
 
-random.shuffle(training)
-training = np.array(training)
+    random.shuffle(training)
+    training = np.array(training)
 
-trainX = training[:, :len(words)]
-trainY = training[:, len(words):]
+    trainX = training[:, :len(words)]
+    trainY = training[:, len(words):]
+    return trainX, trainY, classes
 
+def train_intents_model(trainX, trainY, classes, model_path):
+    model = tf.keras.Sequential()
+    model.add(tf.keras.layers.Dense(128, input_shape=(len(trainX[0]),), activation = 'relu'))
+    model.add(tf.keras.layers.Dropout(0.5))
+    model.add(tf.keras.layers.Dense(64, activation = 'relu'))
+    model.add(tf.keras.layers.Dropout(0.5))
+    model.add(tf.keras.layers.Dense(len(trainY[0]), activation='softmax'))
+
+    sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
+    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+
+    hist = model.fit(trainX, trainY, epochs=200, batch_size=5, verbose=1)
+    model.save(model_path, hist)
+
+    return model
+
+# Preprocess the intents data
+trainX, trainY, classes = preprocess_intents('intents.json')
+
+# Train the intents model
+model = train_intents_model(trainX, trainY, classes, 'intents_model.h5')
+
+"""
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Dense(128, input_shape=(len(trainX[0]),), activation = 'relu'))
 model.add(tf.keras.layers.Dropout(0.5))
@@ -145,3 +170,4 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 hist = model.fit(trainX, trainY, epochs=200, batch_size=5, verbose=1)
 model.save('remindme.h5', hist)
 print('Done')
+"""
