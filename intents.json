@@ -407,10 +407,6 @@
       "tag": "small_talk",
       "patterns": 
       [
-          {"text": "Hi", "entities": []},
-          {"text": "Hello", "entities": []},
-          {"text": "How are you?", "entities": []},
-          {"text": "What's up?", "entities": []},
           {"text": "How's your day going?", "entities": []},
           {"text": "What do you like to do for fun?", "entities": []},
           {"text": "Do you have any hobbies?", "entities": []},
@@ -427,7 +423,6 @@
       ],
       "responses": 
       [
-          {"text": "Hello! How can I assist you today?", "entities": []},
           {"text": "I'm doing well, thanks! How about you?", "entities": []},
           {"text": "Not much, just chatting with you. How about you?", "entities": []},
           {"text": "My day is going well, thanks for asking. How about yours?", "entities": []},
@@ -439,7 +434,6 @@
           {"text": "I don't have a favorite color, since I don't see like humans do. But I can still help you with anything you need!", "entities": []},
           {"text": "I don't have any pets, since I'm a chatbot. But I'm always here to assist you!", "entities": []},
           {"text": "I love all kinds of animals! But since I'm a chatbot, I don't actually interact with them like humans do.", "entities": []},
-          {"text": "Hello! How can I help you today?", "entities": []},
           {"text": "I'm doing well, thanks for asking! How about you?", "entities": []},
           {"text": "Not much, just assisting users like you. How can I help you today?", "entities": []},
           {"text": "It's going great, thanks for asking! How can I assist you today?", "entities": []},
