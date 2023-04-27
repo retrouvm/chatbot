@@ -1,151 +1,21 @@
 {
     "annotations": 
     [
-      {
-        "text": "Remind me to call the doctor at 3pm",
-        "entities": [
-          {
-            "start": 10,
-            "end": 23,
-            "label": "reminder_text"
-          },
-          {
-            "start": 27,
-            "end": 31,
-            "label": "time"
-          }
-        ]
-      },
-      {
-        "text": "What do I have on my calendar for tomorrow?",
-        "entities": 
-        [
-          {
-            "start": 28,
-            "end": 36,
-            "label": "date"
-          }
-        ]
-      },
-      {
-        "text": "Change my meeting with John to next Wednesday at 4pm",
-        "entities": 
-        [
-          {
-            "start": 23,
-            "end": 27,
-            "label": "event_text"
-          },
-          {
-            "start": 33,
-            "end": 47,
-            "label": "new_date"
-          },
-          {
-            "start": 51,
-            "end": 55,
-            "label": "new_time"
-          }
-        ]
-      },
-      {
-        "text": "Create a new reminder to water the plants every Friday at 10am",
-        "entities": 
-        [
-          {
-            "start": 20,
-            "end": 33,
-            "label": "reminder_text"
-          },
-          {
-            "start": 38,
-            "end": 45,
-            "label": "date"
-          },
-          {
-            "start": 49,
-            "end": 53,
-            "label": "time"
-          },
-          {
-            "start": 0,
-            "end": 6,
-            "label": "new_reminder"
-          }
-        ]
-      },
-      {
-        "text": "Delete my reminder for the dentist appointment",
-        "entities": 
-        [
-          {
-            "start": 21,
-            "end": 40,
-            "label": "reminder_text"
-          },
-          {
-            "start": 0,
-            "end": 11,
-            "label": "new_reminder"
-          }
-        ]
-      },
-      {
-        "text": "Move my meeting with Sarah to next Monday at 1pm",
-        "entities": [
-          {
-            "start": 14,
-            "end": 19,
-            "label": "event_text"
-          },
-          {
-            "start": 28,
-            "end": 42,
-            "label": "new_date"
-          },
-          {
-            "start": 46,
-            "end": 49,
-            "label": "new_time"
-          }
-        ]
-      },
-      {
-        "text": "What's the ID of my meeting with John?",
-        "entities": [
-          {
-            "start": 24,
-            "end": 30,
-            "label": "event_id"
-          },
-          {
-            "start": 14,
-            "end": 18,
-            "label": "event_text"
-          }
-        ]
-      },
-      {
-        "text": "Add a new event for a team meeting next Wednesday at 3pm",
-        "entities": 
-        [
-          {
-            "start": 16,
-            "end": 28,
-            "label": "new_event"
-          },
-          {
-            "start": 35,
-            "end": 47,
-            "label": "new_date"
-          },
-          {
-            "start": 51,
-            "end": 55,
-            "label": "new_time"
-          }
-        ]
-    }
+      {"text": "Remind me to call the doctor at 3pm", "entities": [{"start": 13,"end": 28,"label": "reminder_text"},{"start": 32,"end": 35,"label": "time"}]},
+      
+      {"text": "What do I have on my calendar for tomorrow?", "entities": [{"start": 28,"end": 36,"label": "date"}]},
+      
+      {"text": "Change my meeting with John to next Wednesday at 4pm", "entities": [{"start": 23,"end": 27,"label": "event_text"},{"start": 33,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]},
+      
+      {"text": "Create a new reminder to water the plants every Friday at 10am", "entities": [{"start": 20,"end": 33,"label": "reminder_text"},{"start": 38,"end": 45,"label": "date"},{"start": 49,"end": 53,"label": "time"},{"start": 0,"end": 6,"label": "new_reminder"}]},
+      
+      {"text": "Delete my reminder for the dentist appointment", "entities": [{"start": 21,"end": 40,"label": "reminder_text"},{"start": 0,"end": 11,"label": "new_reminder"}]},
+      
+      {"text": "Move my meeting with Sarah to next Monday at 1pm", "entities": [{"start": 14,"end": 19,"label": "event_text"},{"start": 28,"end": 42,"label": "new_date"},{"start": 46,"end": 49,"label": "new_time"}]},
+      
+      {"text": "What's the ID of my meeting with John?", "entities": [{"start": 24,"end": 30,"label": "event_id"},{"start": 14,"end": 18,"label": "event_text"}]},
+      
+      {"text": "Add a new event for a team meeting next Wednesday at 3pm", "entities": [{"start": 16,"end": 28,"label": "new_event"},{"start": 35,"end": 47,"label": "new_date"},{"start": 51,"end": 55,"label": "new_time"}]}
     ]
 }           
   
