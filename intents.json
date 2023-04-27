@@ -211,10 +211,14 @@
           {"text": "Change a reminder", "entities": []},
           {"text": "Edit a reminder", "entities": []},
           {"text": "Modify a reminder", "entities": []},
+          {"text": "I want to change an existing reminder", "entities": []},
           {"text": "Update my reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
           {"text": "Change my reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
           {"text": "Modify my reminder for {reminder_text} to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
-          {"text": "Can you update my reminder for {reminder_text}?", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]}
+          {"text": "Can you update my reminder for {reminder_text}?", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "I want to update the title of my reminder", "entities": []},
+          {"text": "I need to change the date of my reminder to {new_date}", "entities": ["new_date"]},
+          {"text": "I want to change the time of my reminder to {new_time}", "entities": ["new_time"]}
         ],
         "responses":
         [

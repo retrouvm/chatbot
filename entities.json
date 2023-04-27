@@ -219,6 +219,35 @@
       {"text": "What's the event ID for my meeting with John next Wednesday?", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
 
       {"text": "I need to reschedule my reminder with ID R3456 to next Monday at 10am.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "I'm feeling sad because I just had a fight with my best friend.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+     
+      {"text": "I'm feeling anxious about the upcoming job interview next week.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "The news of her success made me feel happy and proud.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "I'm feeling frustrated because I can't seem to solve this problem.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "His rude behavior made me feel angry and disappointed.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "I'm feeling worried about my health after experiencing some symptoms.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "I'm feeling relieved now that I've completed the project on time.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "I'm feeling grateful for the support of my family and friends during a difficult time.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+     
+      {"text": "The beautiful scenery of the mountains made me feel peaceful and calm.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": "I'm feeling curious about the new technology that my friend was talking about.", "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": , "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+      
+      {"text": , "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+     
+      {"text": , "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
+      {"text": , "entities": [{"start": ,"end": ,"label": },{"start": ,"end": ,"label": },{"start": ,"end": ,"label": }]},
+
     ]
 }           
 
