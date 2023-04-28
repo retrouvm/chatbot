@@ -47,6 +47,7 @@ def train_ner_model(train_data, model_path="ner_model"):
             for text, annotations in train_data:
                 example = Example.from_dict(nlp.make_doc(text), annotations)
                 nlp.update([example], drop=0.5, sgd=optimizer, losses=losses)
+            print("Iteration {} Losses: {}".format(iteration, losses))
     os.makedirs(model_path, exist_ok=True)
     print("NER training has been completed.")
     nlp.to_disk(model_path)

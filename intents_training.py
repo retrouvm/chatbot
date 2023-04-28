@@ -33,20 +33,7 @@ def preprocess_intents(intents_file):
             documents.append((word_list, intent['tag'], entities))
             if intent['tag'] not in classes:
                 classes.append(intent['tag'])
-        """
-        # Extract plain text from each response and reminder
-        if 'responses' in intent:
-            for response in intent['responses']:
-                response_text = response['text']
-                #print(response_text)
 
-        if 'patterns' in intent:
-            for pattern in intent['patterns']:
-                if isinstance(pattern, dict) and 'text' in pattern:
-                    reminder_text = pattern['text']
-                    for entity in pattern.get('entities', []):
-                        reminder_text = reminder_text.replace(f'{{{entity}}}', 'some_value')
-                    #print(reminder_text)"""
 
 
     words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
