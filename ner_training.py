@@ -41,7 +41,7 @@ def train_ner_model(train_data, model_path="ner_model"):
     other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
     with nlp.disable_pipes(*other_pipes):
         optimizer = nlp.begin_training()
-        for iteration in range(100):
+        for iteration in range(1000):
             random.shuffle(train_data)
             losses = {}
             for text, annotations in train_data:

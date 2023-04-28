@@ -55,18 +55,27 @@ def get_response(intents_list, intents_json, entities):
     for i in list_of_intents:
         if i['tag'] == tag:
             response = random.choice(i['responses'])['text']
-            for entity, value in entities.items():
-                response = response.replace(f'{{{entity}}}', value)
+            if 'entities' in i:
+                for entity in i['entities']:
+                    if entity in entities:
+                        response = response.replace(f'{{{entity}}}', entities[entity])
             return response
 
-goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit', 'stop', 'stupid', 'no', 'exit', 'leave']
+goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit', 'stop', 'stupid', 'exit', 'leave']
 
 def extract_entities(message):
     doc = nlp(message)
     entities = {}
     for ent in doc.ents:
+        print(ent.label_, ent.text)
         entities[ent.label_] = ent.text
     return entities
+"""def extract_entities(message):
+    doc = nlp(message)
+    entities = {}
+    for ent in doc.ents:
+        entities[ent.label_] = ent.text
+    return entities"""
 
 while True:
     message = input("")
@@ -76,8 +85,13 @@ while True:
     print(res)
     
     if any(word in goodbye_statements for word in message.split()):
-        print('Type "exit" if you want to end this chat')
+        print('Are you sure you want to end this chat? Type "yes" or "no"')
         next_input = input('> ').lower().strip()
-        if next_input == 'exit':
+        if next_input == 'yes':
             print('Goodbye!')
             break
+        elif next_input == 'no':
+            continue
+        else:
+            print('Invalid input. Please type "yes" or "no"')
+            continue
