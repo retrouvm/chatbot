@@ -302,7 +302,7 @@
       "entities": [{"start":10, "end":27, "label": "reminder_text"}, {"start":31, "end":36, "label": "date"}, {"start": 39, "end": 43, "label": "time"}]},
 
       {"text": "Remember to return the library books on March 28th at 12pm", 
-      "entities": [{"start":11, "end":36, "label": "reminder_text"}, {"start":29, "end":40, "label":"date"}, {"start":43, "end":48, "label": "time"}]},
+      "entities": [{"start":11, "end":36, "label": "reminder_text"}, {"start":39, "end":50, "label":"date"}, {"start":53, "end":58, "label": "time"}]},
 
       {"text": "Remember me to walk Murray at 4am on December 31st", 
       "entities": [{"start": 14, "end": 26, "label":"reminder_text"}, {"start": 36, "end": 50, "label": "date"}, {"start": 29, "end": 33, "label": "time"}]},
