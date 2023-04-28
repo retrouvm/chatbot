@@ -3,69 +3,11 @@ import json
 import pickle
 import numpy as np
 
-import spacy
-from spacy.training.example import Example
 
 import nltk
 from nltk.stem import WordNetLemmatizer
 
 import tensorflow as tf
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout
-from keras.optimizers import SGD
-
-
-#code for training the NER model
-
-#function to preprocess the JSON entities file into spaCy format
-def preprocess_data(json_file):
-    data = json.loads(open(json_file).read())
-    train_data = []
-    for annotation in data["annotations"]:
-        text = annotation["text"]
-        entities = []
-        for entity in annotation["entities"]:
-            start = entity["start"]
-            end = entity["end"]
-            label = entity["label"]
-            entities.append((start, end, label))
-        train_data.append((text, {"entities": entities}))
-    return train_data
-
-#function to train the NER model
-def train_ner_model(train_data, model_path="remindme.h5"):
-    nlp = spacy.blank("en")
-    if "ner" not in nlp.pipe_names:
-        ner = nlp.add_pipe("ner", last=True)
-    else:
-        ner = nlp.get_pipe("ner")
-
-    for _, annotations in train_data:
-        for ent in annotations.get("entities"):
-            ner.add_label(ent[2])
-
-    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
-    with nlp.disable_pipes(*other_pipes):
-        optimizer = nlp.begin_training()
-        for iteration in range(100):
-            random.shuffle(train_data)
-            losses = {}
-            for text, annotations in train_data:
-                example = Example.from_dict(nlp.make_doc(text), annotations)
-                nlp.update([example], drop=0.5, sgd=optimizer, losses=losses)
-
-    nlp.to_disk(model_path)
-
-# Preprocess the data
-train_data = preprocess_data("entities.json")
-
-# Train the NER model
-train_ner_model(train_data, model_path="remindme.h5")
-
-
-
-
-
 
 #code for training the intents model
 lemmatizer = WordNetLemmatizer()
@@ -96,7 +38,7 @@ def preprocess_intents(intents_file):
         if 'responses' in intent:
             for response in intent['responses']:
                 response_text = response['text']
-                print(response_text)
+                #print(response_text)
 
         if 'patterns' in intent:
             for pattern in intent['patterns']:
@@ -104,7 +46,7 @@ def preprocess_intents(intents_file):
                     reminder_text = pattern['text']
                     for entity in pattern.get('entities', []):
                         reminder_text = reminder_text.replace(f'{{{entity}}}', 'some_value')
-                    print(reminder_text)
+                    #print(reminder_text)
 
 
     words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
@@ -114,6 +56,8 @@ def preprocess_intents(intents_file):
 
     pickle.dump(words, open('words.pkl', 'wb'))
     pickle.dump(classes, open('classes.pkl', 'wb'))
+    pickle.dump(intents, open('intents.pkl', 'wb'))
+
 
     training = []
     outputEmpty = [0] * len(classes)
@@ -148,7 +92,7 @@ def train_intents_model(trainX, trainY, classes, model_path):
     model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
     hist = model.fit(trainX, trainY, epochs=200, batch_size=5, verbose=1)
-    model.save(model_path, hist)
+    model.save(model_path)
 
     return model
 
@@ -157,19 +101,4 @@ trainX, trainY, classes = preprocess_intents('intents.json')
 
 # Train the intents model
 model = train_intents_model(trainX, trainY, classes, 'intents_model.h5')
-
-"""
-model = tf.keras.Sequential()
-model.add(tf.keras.layers.Dense(128, input_shape=(len(trainX[0]),), activation = 'relu'))
-model.add(tf.keras.layers.Dropout(0.5))
-model.add(tf.keras.layers.Dense(64, activation = 'relu'))
-model.add(tf.keras.layers.Dropout(0.5))
-model.add(tf.keras.layers.Dense(len(trainY[0]), activation='softmax'))
-
-sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
-model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-
-hist = model.fit(trainX, trainY, epochs=200, batch_size=5, verbose=1)
-model.save('remindme.h5', hist)
-print('Done')
-"""
+print('Training has been completed')
