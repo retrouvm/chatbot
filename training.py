@@ -35,8 +35,10 @@ def preprocess_data(json_file):
 #function to train the NER model
 def train_ner_model(train_data, model_path="remindme.h5"):
     nlp = spacy.blank("en")
-    ner = nlp.create_pipe("ner")
-    nlp.add_pipe(ner, last=True)
+    if "ner" not in nlp.pipe_names:
+        ner = nlp.add_pipe("ner", last=True)
+    else:
+        ner = nlp.get_pipe("ner")
 
     for _, annotations in train_data:
         for ent in annotations.get("entities"):
