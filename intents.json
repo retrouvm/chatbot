@@ -116,9 +116,7 @@
           {"text": "I'm not happy with this", "entities": []},
           {"text": "this isn't what I expected", "entities": []},
           {"text": "no, that's not what I mean", "entities": []},
-          {"text": "that's wrong", "entities": []},
-          {"text": "no", "entities": []},
-          {"text": "stop", "entities": []}
+          {"text": "that's wrong", "entities": []}
         ],
         "responses":
         [

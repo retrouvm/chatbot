@@ -33,7 +33,7 @@ def preprocess_intents(intents_file):
             documents.append((word_list, intent['tag'], entities))
             if intent['tag'] not in classes:
                 classes.append(intent['tag'])
-
+        """
         # Extract plain text from each response and reminder
         if 'responses' in intent:
             for response in intent['responses']:
@@ -46,7 +46,7 @@ def preprocess_intents(intents_file):
                     reminder_text = pattern['text']
                     for entity in pattern.get('entities', []):
                         reminder_text = reminder_text.replace(f'{{{entity}}}', 'some_value')
-                    #print(reminder_text)
+                    #print(reminder_text)"""
 
 
     words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
@@ -56,7 +56,6 @@ def preprocess_intents(intents_file):
 
     pickle.dump(words, open('words.pkl', 'wb'))
     pickle.dump(classes, open('classes.pkl', 'wb'))
-    pickle.dump(intents, open('intents.pkl', 'wb'))
 
 
     training = []

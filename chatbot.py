@@ -8,12 +8,20 @@ from nltk.stem import WordNetLemmatizer
 
 from keras.models import load_model
 
-lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+import spacy
 
+# Load the NER model
+nlp = spacy.load("ner_model")
+
+# Load the intents model
+model = load_model('intents_model.h5')
+
+
+lemmatizer = WordNetLemmatizer()
+
+intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('remindme.h5')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -41,24 +49,30 @@ def predict_class(sentence):
         return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
     return return_list
 
-def get_response(intents_list, intents_json):
+def get_response(intents_list, intents_json, entities):
     tag = intents_list[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
         if i['tag'] == tag:
-            #result = random.choice(i['responses'])
-            result = random.choice(i['responses'])['text']
-            break
-            #return result['text']
-    #return "I'm sorry, I didn't understand what you're looking for. Can you please try again?"
-    return result
+            response = random.choice(i['responses'])['text']
+            for entity, value in entities.items():
+                response = response.replace(f'{{{entity}}}', value)
+            return response
 
 goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit', 'stop', 'stupid', 'no', 'exit', 'leave']
 
+def extract_entities(message):
+    doc = nlp(message)
+    entities = {}
+    for ent in doc.ents:
+        entities[ent.label_] = ent.text
+    return entities
+
 while True:
     message = input("")
+    entities = extract_entities(message)
     ints = predict_class(message)
-    res = get_response(ints, intents)
+    res = get_response(ints, intents, entities)
     print(res)
     
     if any(word in goodbye_statements for word in message.split()):
