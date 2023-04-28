@@ -13,6 +13,12 @@ import spacy
 # Load the NER model
 nlp = spacy.load("ner_model")
 
+# Load the pre-trained spaCy model for sentiment analysis
+sentiment_analyzer = spacy.load('en_core_web_md')
+
+# Load the pre-trained spaCy model for topic modeling
+topic_modeler = spacy.load('en_core_web_lg')
+
 # Load the intents model
 model = load_model('intents_model.h5')
 
@@ -49,16 +55,42 @@ def predict_class(sentence):
         return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
     return return_list
 
+# Define a function to perform sentiment analysis
+def analyze_sentiment(text):
+    doc = sentiment_analyzer(text)
+    sentiment_score = doc.sentiment
+    if sentiment_score > 0:
+        return 'positive'
+    elif sentiment_score < 0:
+        return 'negative'
+    else:
+        return 'neutral'
+
+# Define a function to perform topic modeling
+def extract_topic(text):
+    doc = topic_modeler(text)
+    topics = [token.text for token in doc if token.pos_ == 'NOUN']
+    return topics[0] if len(topics) > 0 else None
+
 def get_response(intents_list, intents_json, entities):
     tag = intents_list[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
         if i['tag'] == tag:
             response = random.choice(i['responses'])['text']
-            if 'entities' in i:
-                for entity in i['entities']:
-                    if entity in entities:
-                        response = response.replace(f'{{{entity}}}', entities[entity])
+            if 'inputs' in i:
+                for entity in i['inputs']:
+                    if entity['type'] in entities:
+                        response = response.replace(f'{{{entity["type"]}}}', entities[entity["type"]])
+                    elif entity.get('required', False):
+                        response = f"Sorry, I still need the {entity['type']}. {entity['prompt']}"
+                        return response
+            # Incorporate sentiment analysis and topic modeling into the response
+            sentiment = analyze_sentiment(message)
+            response = response.replace('{sentiment}', sentiment)
+            topic = extract_topic(message)
+            if topic is not None:
+                response = response.replace('{topic}', topic)
             return response
 
 goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit', 'stop', 'stupid', 'exit', 'leave']
@@ -70,12 +102,7 @@ def extract_entities(message):
         print(ent.label_, ent.text)
         entities[ent.label_] = ent.text
     return entities
-"""def extract_entities(message):
-    doc = nlp(message)
-    entities = {}
-    for ent in doc.ents:
-        entities[ent.label_] = ent.text
-    return entities"""
+
 
 while True:
     message = input("")

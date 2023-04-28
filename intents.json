@@ -136,18 +136,18 @@
           {"text": "Set a reminder", "entities": []},
           {"text": "Create a reminder", "entities": []},
           {"text": "Remind me to", "entities": []},
-          {"text": "Set a reminder to {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Remind me to {reminder_text} tomorrow at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Create a reminder for {date} to {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]}
+          {"text": "Set a reminder to {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Remind me to {reminder_text} tomorrow at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Create a reminder for {date} to {reminder_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]}
         ],
         "responses": 
         [
           {"text": "Sure, what's the date and time of the reminder?", "entities": []},
           {"text": "Of course, please provide me with the details, date, and time for the reminder.", "entities": []},
-          {"text": "Creating a reminder for {date} to {reminder_text}","entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
-          {"text": "Reminder has been set for {date} at {time}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Your reminder has been created for {date} at {time}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Got it! I've set a reminder for {date} at {time} to {reminder_text}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "reminder_text", "value": "{reminder_text}"}]}
+          {"text": "Creating a reminder for {date} to {reminder_text}","entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]},
+          {"text": "Reminder has been set for {date} at {time}.", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Your reminder has been created for {date} at {time}.", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Got it! I've set a reminder for {date} at {time} to {reminder_text}.", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]}
         ]
       },
       {
@@ -157,24 +157,24 @@
           {"text": "Delete a reminder", "entities": []},
           {"text": "Remove a reminder", "entities": []},
           {"text": "Cancel a reminder", "entities": []},
-          {"text": "Delete the reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Remove the reminder to {reminder_text} tomorrow at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Cancel the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
-          {"text": "Delete the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}]},
-          {"text": "Remove {reminder_text} from my reminders", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]},
-          {"text": "Can you delete {reminder_text} from my schedule", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]},
-          {"text": "Can you remove {reminder_text} from my reminders", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]}
+          {"text": "Delete the reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Remove the reminder to {reminder_text} tomorrow at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Cancel the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]},
+          {"text": "Delete the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}]},
+          {"text": "Remove {reminder_text} from my reminders", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]},
+          {"text": "Can you delete {reminder_text} from my schedule", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]},
+          {"text": "Can you remove {reminder_text} from my reminders", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]}
           ],
         "responses":
         [
           {"text": "Which reminder would you like to delete? Please provide me with the details.", "entities": []},
           {"text": "Sure, tell me more about the reminder you want to remove, and I'll delete it for you.", "entities": []},
-          {"text": "Deleting the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}]},
-          {"text": "Canceling the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Deleting the reminder with ID {reminder_id}", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}]},
+          {"text": "Canceling the {date} reminder about {reminder_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]},
           {"text": "Sure, what do you want to update about your reminder?", "entities": []},
           {"text": "No problem, please provide me with the details of the update.", "entities": []},
-          {"text": "Ok, I have updated your reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
-          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]}
+          {"text": "Ok, I have updated your reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}, {"type": "new_time", "value": "{new_time}", "required": true, "prompt": "What new time do you want to set this for?"}]},
+          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}]}
         ]
       },
       
@@ -189,8 +189,8 @@
           {"text": "Can you list my reminders?", "entities": []},
           {"text": "What do I have scheduled?", "entities": []},
           {"text": "Show me my schedule", "entities": []},
-          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "{date}"}]},
-          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "{date}"}]}
+          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}]},
+          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}]}
         ],
         "responses":
         [
@@ -200,7 +200,7 @@
           {"text": "Let me check, here's what you have scheduled:", "entities": []},
           {"text": "Your schedule for the next few days looks like this:", "entities": []},
           {"text": "You have the following reminders set:", "entities": []},
-          {"text": "On {date}, you have the following reminders set:", "entities": [{"type": "date", "value": "{date}"}]}
+          {"text": "On {date}, you have the following reminders set:", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}]}
         ]
       },
       {
@@ -212,10 +212,10 @@
           {"text": "Edit a reminder", "entities": []},
           {"text": "Modify a reminder", "entities": []},
           {"text": "I want to change an existing reminder", "entities": []},
-          {"text": "Update my reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Change my reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
-          {"text": "Modify my reminder for {reminder_text} to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
-          {"text": "Can you update my reminder for {reminder_text}?", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}]},
+          {"text": "Update my reminder for {reminder_text} on {date} at {time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Change my reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}, {"type": "new_time", "value": "{new_time}", "required": true, "prompt": "What new time do you want to set this for?"}]},
+          {"text": "Modify my reminder for {reminder_text} to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}]},
+          {"text": "Can you update my reminder for {reminder_text}?", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]},
           {"text": "I want to update the title of my reminder", "entities": []},
           {"text": "I need to change the date of my reminder to {new_date}", "entities": ["new_date"]},
           {"text": "I want to change the time of my reminder to {new_time}", "entities": ["new_time"]}
@@ -226,14 +226,14 @@
           {"text": "Sure, tell me more about the reminder you want to update, and I'll help you make the necessary changes.", "entities": []},
           {"text": "Sure, what do you want to update about your reminder?", "entities": []},
           {"text": "No problem, please provide me with the details of the update.", "entities": []},
-          {"text": "Ok, I have updated your reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "new_time", "value": "{new_time}"}]},
-          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
-          {"text": "What changes do you want to make to reminder id, {reminder_id}, for {reminder_text}?", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}]},
-          {"text": "Got it, I'll update reminder id, {reminder_id}, for {reminder_text} to {new_reminder} on {date} at {time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_reminder", "value": "{new_reminder}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Sure, I'll update reminder id, {reminder_id}, for {reminder_text} on {date} at {time} to {new_reminder}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_reminder", "value": "{new_reminder}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Alright, the date of reminder id, {reminder_id}, for {reminder_text} has been changed to {new_date}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}]},
-          {"text": "I've rescheduled reminder id, {reminder_id}, for {reminder_text} to {new_date} at {time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Noted, the time of reminder id, {reminder_id}, for {reminder_text} has been updated to {new_time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}"}, {"type": "reminder_text", "value": "{reminder_text}"}, {"type": "new_time", "value": "{new_time}"}]}
+          {"text": "Ok, I have updated your reminder for {reminder_text} to {new_date} at {new_time}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}, {"type": "new_time", "value": "{new_time}", "required": true, "prompt": "What new time do you want to set this for?"}]},
+          {"text": "Your reminder for {reminder_text} has been modified to {new_date}", "entities": [{"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}]},
+          {"text": "What changes do you want to make to reminder id, {reminder_id}, for {reminder_text}?", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}]},
+          {"text": "Got it, I'll update reminder id, {reminder_id}, for {reminder_text} to {new_reminder} on {date} at {time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_reminder", "value": "{new_reminder}", "required": true}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Sure, I'll update reminder id, {reminder_id}, for {reminder_text} on {date} at {time} to {new_reminder}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_reminder", "value": "{new_reminder}", "required": true}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Alright, the date of reminder id, {reminder_id}, for {reminder_text} has been changed to {new_date}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}]},
+          {"text": "I've rescheduled reminder id, {reminder_id}, for {reminder_text} to {new_date} at {time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Noted, the time of reminder id, {reminder_id}, for {reminder_text} has been updated to {new_time}.", "entities": [{"type": "reminder_id", "value": "{reminder_id}", "required": true, "prompt": "What is the reminder ID?"}, {"type": "reminder_text", "value": "{reminder_text}", "required": true, "prompt": "What do you want me to remind you about?"}, {"type": "new_time", "value": "{new_time}", "required": true, "prompt": "What new time do you want to set this for?"}]}
         ]
       },
       {
@@ -251,12 +251,12 @@
           {"text": "Can you schedule an event for me?", "entities": []},
           {"text": "Let's plan an event", "entities": []},
           {"text": "I want to organize an event", "entities": []},
-          {"text": "Create an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Set up an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Add an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Schedule an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Plan an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Organize an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Create an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Set up an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Add an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Schedule an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Plan an event for {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Organize an event on {date} at {time} with {event_text}", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "event_text", "value": "{event_text}", "required": true}]},
           {"text": "Save an event", "entities": []},
           {"text": "Save this event", "entities": []},
           {"text": "Save", "entities": []},
@@ -272,7 +272,7 @@
         [
           {"text": "Sure, what date and time would you like to schedule the event?", "entities": []},
           {"text": "Of course, please provide me with the details, date, and time for the event.", "entities": []},
-          {"text": "Great, I've scheduled the event on {date} at {time} with {event_text}.", "entities": [{"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}, {"type": "event_text", "value": "{event_text}"}]},
+          {"text": "Great, I've scheduled the event on {date} at {time} with {event_text}.", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}, {"type": "event_text", "value": "{event_text}", "required": true}]},
           {"text": "Sure, what would you like to name the event?", "entities": []},
           {"text": "What name would you like to give this event?", "entities": []},
           {"text": "What should I call this event in your calendar?", "entities": []},
@@ -291,10 +291,10 @@
           {"text": "Delete an event", "entities": []},
           {"text": "Remove an event", "entities": []},
           {"text": "Cancel an event", "entities": []},
-          {"text": "Delete {event_text} event", "entities": [{"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Remove {event_text} from my events", "entities": [{"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Can you delete {event_text} from my schedule", "entities": [{"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Can you remove {event_text} from my events", "entities": [{"type": "event_text", "value": "{event_text}"}]}
+          {"text": "Delete {event_text} event", "entities": [{"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Remove {event_text} from my events", "entities": [{"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Can you delete {event_text} from my schedule", "entities": [{"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Can you remove {event_text} from my events", "entities": [{"type": "event_text", "value": "{event_text}", "required": true}]}
         ],
         "responses": 
         [
@@ -302,8 +302,8 @@
           {"text": "Sure, tell me more about the event you want to remove, and I'll delete it for you.", "entities": []},
           {"text": "Sure, which event do you want to delete?", "entities": []},
           {"text": "Okay, please provide the name of the event you want to delete", "entities": []},
-          {"text": "Deleting {event_text} from your schedule", "entities": [{"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Okay, I have removed {event_text} from your events", "entities": [{"type": "event_text", "value": "{event_text}"}]}
+          {"text": "Deleting {event_text} from your schedule", "entities": [{"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Okay, I have removed {event_text} from your events", "entities": [{"type": "event_text", "value": "{event_text}", "required": true}]}
         ]
       },
       {
@@ -317,8 +317,8 @@
           {"text": "Can you list my events?", "entities": []},
           {"text": "What do I have scheduled?", "entities": []},
           {"text": "Show me my schedule", "entities": []},
-          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "{date}"}]},
-          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "{date}"}]}
+          {"text": "What are my plans for {date}?", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}]},
+          {"text": "What do I have on {date}?", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}]}
         ],
         "responses": 
         [
@@ -328,7 +328,7 @@
           {"text": "Let me check, here's what you have scheduled:", "entities": []},
           {"text": "Your schedule for the next few days looks like this:", "entities": []},
           {"text": "You have the following events planned:", "entities": []},
-          {"text": "On {date}, you have the following events planned:", "entities": [{"type": "date", "value": "{date}"}]}
+          {"text": "On {date}, you have the following events planned:", "entities": [{"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}]}
         ]
       },
       {
@@ -340,24 +340,24 @@
           {"text": "Can you help me update an event?", "entities": []},
           {"text": "I want to modify an event", "entities": []},
           {"text": "I need to make some changes to an event", "entities": []},
-          {"text": "Change event id, {event_id}, for {event_text} to {new_event}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}]},
-          {"text": "Can you update event id, {event_id}, for {event_text} to {new_event} on {date} at {time}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "I need to update event id, {event_id}, for {event_text} on {date} at {time} to {new_event}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Change the date of event id, {event_id}, for {event_text} to {new_date}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}]},
-          {"text": "Can you reschedule event id, {event_id}, for {event_text} to {new_date} at {time}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "I need to change the time of event id, {event_id}, for {event_text} to {new_time}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}]},
-          {"text": "Can you move event id, {event_id}, for {event_text} to {new_time} on {date}", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}, {"type": "date", "value": "{date}"}]}
+          {"text": "Change event id, {event_id}, for {event_text} to {new_event}", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_event", "value": "{new_event}", "required": true}]},
+          {"text": "Can you update event id, {event_id}, for {event_text} to {new_event} on {date} at {time}", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_event", "value": "{new_event}", "required": true}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "I need to update event id, {event_id}, for {event_text} on {date} at {time} to {new_event}", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_event", "value": "{new_event}", "required": true}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Change the date of event id, {event_id}, for {event_text} to {new_date}", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}]},
+          {"text": "Can you reschedule event id, {event_id}, for {event_text} to {new_date} at {time}", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "I need to change the time of event id, {event_id}, for {event_text} to {new_time}", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_time", "value": "{new_time}", "required": true, "prompt": "What new time do you want to set this for?"}]},
+          {"text": "Can you move event id, {event_id}, for {event_text} to {new_time} on {date}", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_time", "value": "{new_time}", "required": true, "prompt": "What new time do you want to set this for?"}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}]}
         ],
         "responses": 
         [
           {"text": "Sure, what's the name of the event you want to update?", "entities": []},
           {"text": "Of course, please provide me with the name of the event you want to update.", "entities": []},
-          {"text": "What changes do you want to make to event id, {event_id}, for {event_text}?", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}]},
-          {"text": "Got it, I'll update event id, {event_id}, for {event_text} to {new_event} on {date} at {time}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Sure, I'll update event id, {event_id}, for {event_text} on {date} at {time} to {new_event}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_event", "value": "{new_event}"}, {"type": "date", "value": "{date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Alright, the date of event id, {event_id}, for {event_text} has been changed to {new_date}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}]},
-          {"text": "I've rescheduled event id, {event_id}, for {event_text} to {new_date} at {time}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_date", "value": "{new_date}"}, {"type": "time", "value": "{time}"}]},
-          {"text": "Noted, the time of event id, {event_id}, for {event_text} has been updated to {new_time}.", "entities": [{"type": "event_id", "value": "{event_id}"}, {"type": "event_text", "value": "{event_text}"}, {"type": "new_time", "value": "{new_time}"}]}
+          {"text": "What changes do you want to make to event id, {event_id}, for {event_text}?", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}]},
+          {"text": "Got it, I'll update event id, {event_id}, for {event_text} to {new_event} on {date} at {time}.", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_event", "value": "{new_event}", "required": true}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Sure, I'll update event id, {event_id}, for {event_text} on {date} at {time} to {new_event}.", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_event", "value": "{new_event}", "required": true}, {"type": "date", "value": "{date}", "required": true, "prompt": "What date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Alright, the date of event id, {event_id}, for {event_text} has been changed to {new_date}.", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}]},
+          {"text": "I've rescheduled event id, {event_id}, for {event_text} to {new_date} at {time}.", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_date", "value": "{new_date}", "required": true, "prompt": "What new date do you want to set this for?"}, {"type": "time", "value": "{time}", "required": true, "prompt": "What time do you want to set this for?"}]},
+          {"text": "Noted, the time of event id, {event_id}, for {event_text} has been updated to {new_time}.", "entities": [{"type": "event_id", "value": "{event_id}", "required": true}, {"type": "event_text", "value": "{event_text}", "required": true}, {"type": "new_time", "value": "{new_time}", "required": true, "prompt": "What new time do you want to set this for?"}]}
         ]
       },
       {
@@ -369,38 +369,38 @@
             {"text": "What's your mood like?", "entities": []},
             {"text": "How is your day going?", "entities": []},
             {"text": "Are you feeling well today?", "entities": []},
-            {"text": "I'm feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm {emotion} today", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm feeling {emotion} because of {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "I'm feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm feeling {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "Feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "Feeling {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "I feel {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I feel {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "{emotion} is what I'm feeling", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm experiencing {emotion}", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm experiencing {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "I'm in a {emotion} mood", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm in a {emotion} mood because {reason}", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "{emotion} is how I'm feeling right now", "entities": [{"type": "emotion", "value": "emotion"}]}
+            {"text": "I'm feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm {emotion} today", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm feeling {emotion} because of {reason}", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "I'm feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm feeling {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "Feeling {emotion}", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "Feeling {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "I feel {emotion}", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I feel {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "{emotion} is what I'm feeling", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm experiencing {emotion}", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm experiencing {emotion} because {reason}", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "I'm in a {emotion} mood", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm in a {emotion} mood because {reason}", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "{emotion} is how I'm feeling right now", "entities": [{"type": "emotion", "value": "emotion", "required": true}]}
         ],
         "responses": 
         [
             {"text": "I'm just a machine, so I don't have feelings. How about you? How are you feeling today?", "entities": []},
             {"text": "I'm sorry to hear that.", "entities": []},
             {"text": "That sounds tough.", "entities": []},
-            {"text": "It's good to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm glad to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "I'm sorry to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "It's completely normal to feel {emotion} sometimes.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "It's good to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm glad to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "I'm sorry to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "It's completely normal to feel {emotion} sometimes.", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
             {"text": "I understand how you feel.", "entities": []},
-            {"text": "I'm glad to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion"}]},
-            {"text": "It sounds like you've been going through a tough time.", "entities": [{"type": "emotion", "value": "emotion"}]},
+            {"text": "I'm glad to hear that you're feeling {emotion}.", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
+            {"text": "It sounds like you've been going through a tough time.", "entities": [{"type": "emotion", "value": "emotion", "required": true}]},
             {"text": "It's okay to not be okay sometimes.", "entities": []},
-            {"text": "I'm sorry to hear that you're feeling {emotion} because of {reason}.", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "It's understandable to feel {emotion} because of {reason}.", "entities": [{"type": "emotion", "value": "emotion"}, {"type": "reason", "value": "reason"}]},
-            {"text": "I understand how {reason} could make you feel {emotion}.", "entities": [{"type": "reason", "value": "reason"}, {"type": "emotion", "value": "emotion"}]}
+            {"text": "I'm sorry to hear that you're feeling {emotion} because of {reason}.", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "It's understandable to feel {emotion} because of {reason}.", "entities": [{"type": "emotion", "value": "emotion", "required": true}, {"type": "reason", "value": "reason", "required": true}]},
+            {"text": "I understand how {reason} could make you feel {emotion}.", "entities": [{"type": "reason", "value": "reason", "required": true}, {"type": "emotion", "value": "emotion", "required": true}]}
         ]
     },
     {
