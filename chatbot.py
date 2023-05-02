@@ -67,6 +67,7 @@ def get_response(intents_list, intents_json, entities):
                     response = response.replace(f'{{{entity["type"]}}}', entities[entity["type"]])
             return response
 
+
 goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit', 'exit', 'leave', 'end']
 
 def extract_entities(message):
@@ -84,7 +85,7 @@ while True:
     print("RemindMe!: ", res)
     
     if any(word in goodbye_statements for word in message.split()):
-        print('Are you sure you want to end this chat? Type "yes" or "no"')
+        print('\nAre you sure you want to end this chat? Type "yes" or "no"')
         next_input = input('> ').lower().strip()
         if next_input == 'yes':
             print('Goodbye!')
