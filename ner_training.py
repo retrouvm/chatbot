@@ -28,20 +28,20 @@ def preprocess_data(json_file):
 
 #function to train the NER model
 def train_ner_model(train_data, model_path="ner_model"):
-    nlp = spacy.blank("en")
+    nlp = spacy.blank("en") #blank spaCy model
     if "ner" not in nlp.pipe_names:
-        ner = nlp.add_pipe("ner", last=True)
+        ner = nlp.add_pipe("ner", last=True) #add NER pipeline
     else:
         ner = nlp.get_pipe("ner")
 
-    for _, annotations in train_data:
+    for _, annotations in train_data: #extract entities for labelling
         for ent in annotations.get("entities"):
             ner.add_label(ent[2])
 
     other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
     with nlp.disable_pipes(*other_pipes):
         optimizer = nlp.begin_training()
-        for iteration in range(1000):
+        for iteration in range(1000): #1000 
             random.shuffle(train_data)
             losses = {}
             for text, annotations in train_data:
