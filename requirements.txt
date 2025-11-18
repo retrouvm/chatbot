@@ -1,0 +1,24 @@
+# Core dependencies for RemindMe! Chatbot
+# Python 3.8+ required
+
+# Deep Learning & ML
+tensorflow>=2.8.0,<3.0.0
+keras>=2.8.0,<3.0.0
+numpy>=1.21.0,<2.0.0
+
+# NLP Libraries
+nltk>=3.7
+spacy>=3.4.0
+
+# Date/Time Parsing
+python-dateutil>=2.8.0
+
+# Utilities
+pickle5>=0.0.11; python_version < '3.8'
+
+# Note: After installing, download required NLTK data:
+# python -c "import nltk; nltk.download('punkt'); nltk.download('wordnet')"
+#
+# Download spaCy English model:
+# python -m spacy download en_core_web_sm
+
