@@ -8,6 +8,7 @@ import os
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 import spacy
+import config
 
 # Initialize lemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -19,16 +20,10 @@ intents = None
 words = None
 classes = None
 
-# Configuration constants
-ERROR_THRESHOLD = 0.25  # Increased from 0.05 for better accuracy
-FALLBACK_INTENT = "no_intent_match"
-MODEL_PATHS = {
-    'ner_model': 'ner_model',
-    'intents_model': 'intents_model.h5',
-    'intents_json': 'intents.json',
-    'words_pkl': 'words.pkl',
-    'classes_pkl': 'classes.pkl'
-}
+# Import configuration
+MODEL_PATHS = config.MODEL_PATHS
+ERROR_THRESHOLD = config.INTENT_CONFIG['error_threshold']
+FALLBACK_INTENT = config.INTENT_CONFIG['fallback_intent']
 
 def load_models():
     """Load all required models and data files with error handling."""
@@ -119,7 +114,8 @@ def predict_class(sentence):
     try:
         sentence = sentence.lower().strip()
         bow = bag_of_words(sentence)
-        res = model.predict(np.array([bow]), verbose=0)[0]
+        verbose = 1 if config.INTENT_CONFIG['use_verbose'] else 0
+        res = model.predict(np.array([bow]), verbose=verbose)[0]
         
         results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
         results.sort(key=lambda x: x[1], reverse=True)
@@ -203,9 +199,15 @@ def extract_entities(message):
         doc = nlp(message)
         entities = {}
         for ent in doc.ents:
-            # Handle multiple entities of same type (keep the first one)
-            if ent.label_ not in entities:
-                entities[ent.label_] = ent.text
+            # Handle multiple entities of same type based on config
+            if config.NER_CONFIG['keep_first_entity_only']:
+                if ent.label_ not in entities:
+                    entities[ent.label_] = ent.text
+            else:
+                # Keep all entities, store as list
+                if ent.label_ not in entities:
+                    entities[ent.label_] = []
+                entities[ent.label_].append(ent.text)
         return entities
     except Exception as e:
         print(f"Error extracting entities: {e}")
@@ -214,11 +216,11 @@ def extract_entities(message):
 def main():
     """Main chatbot loop."""
     print("=" * 50)
-    print("RemindMe! Chatbot - Ready to assist you!")
+    print(config.CHATBOT_CONFIG['welcome_message'])
     print("Type 'quit', 'exit', or 'bye' to end the conversation")
     print("=" * 50)
     
-    goodbye_statements = ['bye', 'goodbye', 'see you', 'later', 'quit', 'exit', 'leave', 'end']
+    goodbye_statements = config.CHATBOT_CONFIG['goodbye_statements']
     
     while True:
         try:
