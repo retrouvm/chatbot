@@ -13,6 +13,9 @@ spacy>=3.4.0
 # Date/Time Parsing
 python-dateutil>=2.8.0
 
+# Machine Learning Utilities
+scikit-learn>=1.0.0
+
 # Utilities
 pickle5>=0.0.11; python_version < '3.8'
 
