@@ -5,10 +5,12 @@ import numpy as np
 import nltk
 import sys
 import os
+import time
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 import spacy
 import config
+from logger import logger, log_prediction, log_error, log_request, log_model_loading
 
 # Initialize lemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -35,8 +37,11 @@ def load_models():
             raise FileNotFoundError(f"NER model not found at {MODEL_PATHS['ner_model']}")
         nlp = spacy.load(MODEL_PATHS['ner_model'])
         print("✓ NER model loaded successfully")
+        log_model_loading('NER Model', success=True)
     except Exception as e:
-        print(f"✗ Error loading NER model: {e}")
+        error_msg = f"Error loading NER model: {e}"
+        print(f"✗ {error_msg}")
+        log_model_loading('NER Model', success=False, error=str(e))
         sys.exit(1)
     
     try:
@@ -45,8 +50,11 @@ def load_models():
             raise FileNotFoundError(f"Intents model not found at {MODEL_PATHS['intents_model']}")
         model = load_model(MODEL_PATHS['intents_model'])
         print("✓ Intents model loaded successfully")
+        log_model_loading('Intents Model', success=True)
     except Exception as e:
-        print(f"✗ Error loading intents model: {e}")
+        error_msg = f"Error loading intents model: {e}"
+        print(f"✗ {error_msg}")
+        log_model_loading('Intents Model', success=False, error=str(e))
         sys.exit(1)
     
     try:
@@ -54,14 +62,21 @@ def load_models():
         with open(MODEL_PATHS['intents_json'], 'r', encoding='utf-8') as f:
             intents = json.load(f)
         print("✓ Intents data loaded successfully")
-    except FileNotFoundError:
-        print(f"✗ Intents file not found at {MODEL_PATHS['intents_json']}")
+        logger.info(f"Loaded {len(intents.get('intents', []))} intents from JSON")
+    except FileNotFoundError as e:
+        error_msg = f"Intents file not found at {MODEL_PATHS['intents_json']}"
+        print(f"✗ {error_msg}")
+        log_error('FileNotFound', error_msg, e)
         sys.exit(1)
     except json.JSONDecodeError as e:
-        print(f"✗ Error parsing intents JSON: {e}")
+        error_msg = f"Error parsing intents JSON: {e}"
+        print(f"✗ {error_msg}")
+        log_error('JSONDecodeError', error_msg, e)
         sys.exit(1)
     except Exception as e:
-        print(f"✗ Error loading intents: {e}")
+        error_msg = f"Error loading intents: {e}"
+        print(f"✗ {error_msg}")
+        log_error('Exception', error_msg, e)
         sys.exit(1)
     
     try:
@@ -124,9 +139,17 @@ def predict_class(sentence):
         for r in results:
             return_list.append({'intent': classes[r[0]], 'probability': float(r[1])})
         
+        # Log prediction
+        if return_list:
+            log_prediction(sentence, return_list[0]['intent'], return_list[0]['probability'])
+        else:
+            logger.warning(f"No intent matched for sentence: '{sentence}' (threshold: {ERROR_THRESHOLD})")
+        
         return return_list
     except Exception as e:
-        print(f"Error in predict_class: {e}")
+        error_msg = f"Error in predict_class: {e}"
+        print(error_msg)
+        log_error('PredictionError', error_msg, e)
         return []
 
 def get_response(intents_list, intents_json, entities):
@@ -208,9 +231,15 @@ def extract_entities(message):
                 if ent.label_ not in entities:
                     entities[ent.label_] = []
                 entities[ent.label_].append(ent.text)
+        
+        if entities:
+            logger.debug(f"Extracted entities from '{message}': {entities}")
+        
         return entities
     except Exception as e:
-        print(f"Error extracting entities: {e}")
+        error_msg = f"Error extracting entities: {e}"
+        print(error_msg)
+        log_error('EntityExtractionError', error_msg, e)
         return {}
 
 def main():
@@ -224,6 +253,7 @@ def main():
     
     while True:
         try:
+            start_time = time.time()
             message = input("\nYou: ").strip()
             
             # Handle empty input
@@ -235,7 +265,12 @@ def main():
             entities = extract_entities(message)
             ints = predict_class(message)
             res = get_response(ints, intents, entities)
+            processing_time = time.time() - start_time
+            
             print("RemindMe!: ", res)
+            
+            # Log request and response
+            log_request(message, res, processing_time)
             
             # Check for goodbye statements
             message_lower = message.lower()
@@ -262,8 +297,10 @@ def main():
             print('\n\nGoodbye!')
             break
         except Exception as e:
-            print(f"RemindMe!: An unexpected error occurred: {e}")
+            error_msg = f"An unexpected error occurred: {e}"
+            print(f"RemindMe!: {error_msg}")
             print("Please try again or type 'quit' to exit.")
+            log_error('UnexpectedError', error_msg, e)
 
 if __name__ == "__main__":
     main()
