@@ -37,6 +37,12 @@ ENV/
 logs/
 *.log
 
+# Documentation - Work in Progress / Personal Notes
+docs/SUMMARY.md
+docs/CHANGELOG.md
+docs/FUTURE_ENHANCEMENTS.md
+docs/IMPLEMENTATION.md
+
 # Model files (optional - uncomment if you don't want to track models)
 # *.h5
 # *.pkl
