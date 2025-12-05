@@ -8,6 +8,12 @@ from sklearn.model_selection import train_test_split
 import nltk
 from nltk.stem import WordNetLemmatizer
 import tensorflow as tf
+import sys
+from pathlib import Path
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import config
 from logger import setup_logger, log_training_event
 

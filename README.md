@@ -48,12 +48,12 @@ python chatbot.py
 
 Train the intent classification model:
 ```bash
-python intents_training.py
+python training/train_intents.py
 ```
 
 Train the NER model:
 ```bash
-python ner_training.py
+python training/train_ner.py
 ```
 
 **Note:** Models must be trained before running the chatbot. Training includes:
@@ -80,12 +80,26 @@ python chatbot.py
 
 ```
 chatbot/
-├── chatbot.py              # Main chatbot application
-├── config.py              # Configuration management
-├── logger.py              # Logging system
-├── datetime_parser.py     # Date/time parsing utilities
-├── intents_training.py    # Intent model training
-├── ner_training.py        # NER model training
+├── chatbot/               # Main package
+│   ├── __init__.py
+│   ├── main.py           # Entry point
+│   ├── chatbot.py         # Main Chatbot class
+│   ├── model_loader.py    # Model loading utilities
+│   ├── intent_classifier.py  # Intent classification
+│   ├── entity_extractor.py   # Entity extraction
+│   ├── response_generator.py # Response generation
+│   └── utils/            # Utility modules
+│       ├── __init__.py
+│       ├── preprocessor.py    # Text preprocessing
+│       └── datetime_parser.py # Date/time parsing
+├── training/              # Training scripts
+│   ├── __init__.py
+│   ├── train_intents.py  # Intent model training
+│   └── train_ner.py       # NER model training
+├── tests/                # Unit tests
+├── chatbot.py            # Backward-compatible entry point
+├── config.py             # Configuration management
+├── logger.py             # Logging system
 ├── intents.json          # Intent training data
 ├── entities.json         # NER training data
 └── requirements.txt      # Python dependencies
